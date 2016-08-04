@@ -1,0 +1,123 @@
+[Compiler]
+A=1
+B=0
+C=1
+D=1
+E=0
+F=0
+G=1
+H=1
+I=0
+J=1
+K=0
+L=1
+M=0
+N=1
+O=0
+P=1
+Q=0
+R=0
+S=0
+T=0
+U=0
+V=1
+W=0
+X=1
+Y=1
+Z=1
+ShowHints=1
+ShowWarnings=1
+UnitAliases=WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;
+
+[Linker]
+MapFile=0
+OutputObjs=0
+ConsoleApp=1
+DebugInfo=0
+RemoteSymbols=0
+MinStackSize=16384
+MaxStackSize=1048576
+ImageBase=4194304
+ExeDescription=
+
+[Directories]
+OutputDir=
+UnitOutputDir=
+PackageDLLOutputDir=
+PackageDCPOutputDir=
+SearchPath=$(DELPHI)\Source\Toolsapi;E:\komponenty\RX\Units;E:\komponenty\COOL!!;E:\komponenty\ICS\DELPHI\VC32;F:\bot&konsola\czat\pakit;E:\komponenty\trayicon;E:\komponenty
+Packages=VCL50;VCLX50;VCLSMP50;VCLDB50;VCLADO50;ibevnt50;VCLBDE50;VCLIB50;VCLIE50;INETDB50;INET50;WEBMID50;dclocx50;dclaxserver50;Icsdel50;RXCTL5
+Conditionals=
+DebugSourceDirs=
+UsePackages=0
+
+[Parameters]
+RunParams=-bziumbzium
+HostApplication=
+
+[Language]
+ActiveLang=
+ProjectLang=$00000415
+RootDir=
+
+[Version Info]
+IncludeVerInfo=1
+AutoIncBuild=1
+MajorVer=2
+MinorVer=1
+Release=0
+Build=134
+Debug=0
+PreRelease=1
+Special=0
+Private=1
+DLL=0
+Locale=1045
+CodePage=1250
+
+[Version Info Keys]
+CompanyName=
+FileDescription=
+FileVersion=2.1.0.134
+InternalName=
+LegalCopyright=
+LegalTrademarks=
+OriginalFilename=
+ProductName=
+ProductVersion=1.0.0.0
+Comments=
+PrivateBuild=
+
+[Excluded Packages]
+$(DELPHI)\BIN\CORIDE50.BPL=Borland Core IDE Package
+$(DELPHI)\Bin\stride50.bpl=String Resource Editor IDE Package
+$(DELPHI)\Bin\proide50.bpl=Borland Core IDE Package
+$(DELPHI)\BIN\CRBIDE50.BPL=Borland Core IDE CORBA Package
+$(DELPHI)\Bin\DBWEBXPRT.BPL=Borland Web Wizard Package
+$(DELPHI)\BIN\DCLBDE50.BPL=Borland BDE DB Components
+$(DELPHI)\Bin\dclmid50.bpl=Borland MIDAS Components
+$(DELPHI)\Projects\Bpl\dclrxbd5.bpl=RX Library BDE Database Components
+$(DELPHI)\Projects\Bpl\dclractl5.bpl=R&A Controls
+$(DELPHI)\Projects\Bpl\dclradb5.bpl=R&A DB aware
+$(DELPHI)\Projects\Bpl\dclrai5.bpl=R&A interpreter 2
+$(DELPHI)\Bin\dcldss50.bpl=Borland Decision Cube Components
+$(DELPHI)\BIN\DCLTEE50.BPL=TeeChart 5.0 Components
+$(DELPHI)\Bin\DCLNMF50.bpl=NetMasters Fastnet Tools
+$(DELPHI)\Bin\dclqrt50.bpl=QuickReport Components
+$(DELPHI)\Bin\dcltqr50.bpl=TeeChart 5.0 for QuickReport Components Design Package
+$(DELPHI)\Bin\rcpkg50.bpl=(untitled)
+
+[HistoryLists\hlUnitAliases]
+Count=1
+Item0=WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;
+
+[HistoryLists\hlSearchPath]
+Count=8
+Item0=$(DELPHI)\Source\Toolsapi;E:\komponenty\RX\Units;E:\komponenty\COOL!!;E:\komponenty\ICS\DELPHI\VC32;F:\bot&konsola\czat\pakit;E:\komponenty\trayicon;E:\komponenty
+Item1=$(DELPHI)\Source\Toolsapi;E:\komponenty\RX\Units;E:\komponenty\COOL!!;E:\komponenty\ICS\DELPHI\VC32;F:\bot&konsola\czat\pakit
+Item2=$(DELPHI)\Source\Toolsapi;E:\komponenty\RX\Units;E:\komponenty\COOL!!;E:\komponenty\ICS\DELPHI\VC32
+Item3=F:\Program Files\COMPON\RX\Units;F:\Program Files\COMPON\cooltray;D:\d5\czat\pakit;F:\Program Files\COMPON\ICS\DELPHI\VC32;F:\Program Files\COMPON;F:\Program Files\COMPON\SHAPES;F:\Program Files\COMPON\COOL!!;$(DELPHI)\Source\Toolsapi
+Item4=F:\Program Files\COMPON\RX\Units;F:\Program Files\COMPON\cooltray;D:\d5\czat\pakit;F:\Program Files\COMPON\ICS\DELPHI\VC32;F:\Program Files\COMPON;F:\Program Files\COMPON\SHAPES;F:\Program Files\COMPON\COOL!!;C:\Program Files\Borland\Delphi5\Source\Toolsapi
+Item5=F:\Program Files\COMPON\RX\Units;F:\Program Files\COMPON\cooltray;D:\d5\czat\pakit;F:\Program Files\COMPON\ICS\DELPHI\VC32;F:\Program Files\COMPON;F:\Program Files\COMPON\SHAPES;F:\Program Files\COMPON\COOL!!
+Item6=F:\Program Files\COMPON\RX\Units;F:\Program Files\COMPON\cooltray;D:\d5\czat\pakit;F:\Program Files\COMPON\ICS\DELPHI\VC32;F:\Program Files\COMPON;F:\Program Files\COMPON\SHAPES
+Item7=F:\Program Files\COMPON\RX\Units;F:\Program Files\COMPON\cooltray;D:\d5\czat\pakit;F:\Program Files\COMPON\ICS\DELPHI\VC32;F:\Program Files\COMPON

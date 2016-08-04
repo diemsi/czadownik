@@ -1,0 +1,24 @@
+Pomoc do tego œmiesznego programu :)
+
++ Opis znaczników %
+%nick - nick zaznaczony w liœcie czatowiczów
+%me - mój nick
+%last - nick ostatniej osoby, która coœ powiedzia³a
+%lastip - ip osoby, która ostatnio coœ powiedzia³a
+%ip - ip osoby zaznaczonej w liœcie czatowiczów
+%joinip - wartoœæ ip pobierana z ** czatowicz ip=aaa.bbb.ccc.ddd
+%ver - wersja konsoli
+-----------------
+%ip, %joinip, %lastip dostepne tylko wtedy, gdy konsola jest w trybie OP
+czyli czatowicz ma opa
+-----------------
+%dd - dzieñ 01, 02,....,31
+%mm - miesi¹c 01, 02,...,12
+%yy - rok 2002,....
+%now - aktualna data w formacie DD MM YYYY
+
+%lastdd, %lastmm, %lastyy, %yesterday - podobnie jak wyzej
+ale dotyczy dnia zesz³ego :)
+
+Jeszcze jakies pomys³y ??? daj mi znaæ.
+
