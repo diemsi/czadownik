@@ -1,17 +1,15 @@
 unit wnd_Splash;
 
-{$MODE Delphi}
-
 interface
 
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  ExtCtrls{, CoolForm};
+  ExtCtrls, CoolForm;
 
 type
   TwndSplash = class(TForm)
     Timer1: TTimer;
-//    CoolForm1: TCoolForm;
+    CoolForm1: TCoolForm;
     procedure Timer1Timer(Sender: TObject);
     procedure FormCreate(Sender: TObject);
   private
@@ -26,7 +24,7 @@ var
 
 implementation
 
-{$R *.lfm}
+{$R *.DFM}
 
 procedure TwndSplash.Timer1Timer(Sender: TObject);
 begin

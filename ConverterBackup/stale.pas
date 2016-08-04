@@ -1,7 +1,5 @@
 unit stale;
 
-{$MODE Delphi}
-
 interface
 
 const

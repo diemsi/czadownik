@@ -1,7 +1,4 @@
 unit ip_parser;
-
-{$MODE Delphi}
-
 interface
 uses windows, sysutils, classes;
 
@@ -44,7 +41,7 @@ begin
           end;
           val(czlon, iczlon, kod);
           if kod <> 0 then exit; // blad konwersji
-          if iczlon < 0 then exit; // za maÅ‚y ??
+          if iczlon < 0 then exit; // za ma³y ??
           if iczlon > 255 then exit; //zycie to nie film 'SYSTEM' :)
      end;
      Result := True;

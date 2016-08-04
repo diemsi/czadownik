@@ -1,7 +1,4 @@
 unit nl_elem;
-
-{$MODE Delphi}
-
 interface
 uses windows;
 // z apleta

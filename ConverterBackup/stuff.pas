@@ -1,7 +1,4 @@
 unit stuff;
-
-{$MODE Delphi}
-
 interface
 uses windows, sysutils, forms, graphics, pak, ShellApi, classes, winsock;
 
@@ -12,8 +9,8 @@ Type TLongInt = array[1..4] of byte;
      PLongint = ^TLongInt;
 
 Type TZnakCzata = record
-       Java:String;
-       Windows:String;
+       Java:String[2];
+       Windows:Char;
      end;
 
 type PFoncik = ^TFoncik;
@@ -73,24 +70,24 @@ procedure WindowsCodesTojava(var s:string);
 
 
 const TabelaKonwersji : array [1..18] of TZnakCzata = (
-        (Java: 'Ä'; Windows: 'Ę'),
-        (Java: 'Ä™'; Windows: 'ę'),
-        (Java: 'Ă“'; Windows: 'Ó'),
-        (Java: 'Ăł'; Windows: 'ó'),
-        (Java: 'Ä„'; Windows: 'Ą'),
-        (Java: 'Ä…'; Windows: 'ą'),
-        (Java: 'Ĺš'; Windows: 'Ś'),
-        (Java: 'Ĺ›'; Windows: 'ś'),
-        (Java: 'Ĺ'; Windows: 'Ł'),
-        (Java: 'Ĺ‚'; Windows: 'ł'),
-        (Java: 'Ĺ»'; Windows: 'Ż'),
-        (Java: 'ĹĽ'; Windows: 'ż'),
-        (Java: 'Ĺą'; Windows: 'Ź'),
-        (Java: 'Ĺş'; Windows: 'ź'),
-        (Java: 'Ä†'; Windows: 'Ć'),
-        (Java: 'Ä‡'; Windows: 'ć'),
-        (Java: 'Ĺ'; Windows: 'Ń'),
-        (Java: 'Ĺ„'; Windows: 'ń'));
+        (Java: 'Ę'; Windows: '�'),
+        (Java: 'ę'; Windows: '�'),
+        (Java: 'Ó'; Windows: '�'),
+        (Java: 'ó'; Windows: '�'),
+        (Java: 'Ą'; Windows: '�'),
+        (Java: 'ą'; Windows: '�'),
+        (Java: 'Ś'; Windows: '�'),
+        (Java: 'ś'; Windows: '�'),
+        (Java: 'Ł'; Windows: '�'),
+        (Java: 'ł'; Windows: '�'),
+        (Java: 'Ż'; Windows: '�'),
+        (Java: 'ż'; Windows: '�'),
+        (Java: 'Ź'; Windows: '�'),
+        (Java: 'ź'; Windows: '�'),
+        (Java: 'Ć'; Windows: '�'),
+        (Java: 'ć'; Windows: '�'),
+        (Java: 'Ń'; Windows: '�'),
+        (Java: 'ń'; Windows: '�'));
 
 
 var AktywneOkno:THandle;
@@ -180,7 +177,7 @@ begin
      Dlugosc := GetFileVersionInfoSize(a, Dummy);
      if Dlugosc = 0 then
      begin
-          Result := 'BŁĄD PROGRAMU!(1)';
+          Result := 'B��D PROGRAMU!(1)';
           exit;
      end;
      GetMem(Bufor, Dlugosc);
@@ -188,7 +185,7 @@ begin
      begin
           if not VerQueryValue(Bufor,'\VarFileInfo\Translation', bw, dlg2) then
           begin
-               Result := 'BŁĄD PROGRAMU!(3)';
+               Result := 'B��D PROGRAMU!(3)';
                exit;
           end;
           FillChar(Klucz, SizeOf(Klucz), #0);
@@ -198,13 +195,13 @@ begin
           StrCat(klucz, '\FileVersion');
           if not VerQueryValue(Bufor,Klucz, bw, dlg2) then
           begin
-               Result := 'BŁĄD PROGRAMU!(4)';
+               Result := 'B��D PROGRAMU!(4)';
                exit;
           end;
           Result := StrPas(bw);
      end else
      begin
-          Result := 'BŁĄD PROGRAMU!(2)';
+          Result := 'B��D PROGRAMU!(2)';
      end;
      FreeMem(Bufor, Dlugosc);
 end;
@@ -254,19 +251,19 @@ begin
      Ciag := StringReplace(Ciag, '<niebieski>', '<#0000ff>', [rfReplaceAll, rfIgnoreCase]);
      Ciag := StringReplace(Ciag, '<czerwony>', '<#ff0000>', [rfReplaceAll, rfIgnoreCase]);
      Ciag := StringReplace(Ciag, '<fioletowy>', '<#b300ff>', [rfReplaceAll, rfIgnoreCase]);
-     Ciag := StringReplace(Ciag, '<pomarańczowy>', '<#ff9000>', [rfReplaceAll, rfIgnoreCase]);
-     Ciag := StringReplace(Ciag, '<brązowy>', '<#a55217>', [rfReplaceAll, rfIgnoreCase]);
+     Ciag := StringReplace(Ciag, '<pomara�czowy>', '<#ff9000>', [rfReplaceAll, rfIgnoreCase]);
+     Ciag := StringReplace(Ciag, '<br�zowy>', '<#a55217>', [rfReplaceAll, rfIgnoreCase]);
      Ciag := StringReplace(Ciag, '<szary>', '<#b3b3b3>', [rfReplaceAll, rfIgnoreCase]);
-     Ciag := StringReplace(Ciag, '<różowy>', '<#ff00cc>', [rfReplaceAll, rfIgnoreCase]);
-     Ciag := StringReplace(Ciag, '<błękitny>', '<#00bfe8>', [rfReplaceAll, rfIgnoreCase]);
+     Ciag := StringReplace(Ciag, '<r�owy>', '<#ff00cc>', [rfReplaceAll, rfIgnoreCase]);
+     Ciag := StringReplace(Ciag, '<b��kitny>', '<#00bfe8>', [rfReplaceAll, rfIgnoreCase]);
      Ciag := StringReplace(Ciag, '<turkusowy>', '<#00ddb6>', [rfReplaceAll, rfIgnoreCase]);
-     Ciag := StringReplace(Ciag, '<żółty>', '<#e5d848>', [rfReplaceAll, rfIgnoreCase]);
+     Ciag := StringReplace(Ciag, '<��ty>', '<#e5d848>', [rfReplaceAll, rfIgnoreCase]);
      Ciag := StringReplace(Ciag, '<kasztanowy>', '<#800000>', [rfReplaceAll, rfIgnoreCase]);
      Ciag := StringReplace(Ciag, '<granatowy>', '<#000080>', [rfReplaceAll, rfIgnoreCase]);
      Ciag := StringReplace(Ciag, '<purpurowy>', '<#800080>', [rfReplaceAll, rfIgnoreCase]);
      Ciag := StringReplace(Ciag, '<oliwkowy>', '<#808000>', [rfReplaceAll, rfIgnoreCase]);
      Ciag := StringReplace(Ciag, '<zielonomodry>', '<#008080>', [rfReplaceAll, rfIgnoreCase]);
-     Ciag := StringReplace(Ciag, '<własny>', '<#'+WlasnyKolor+'>', [rfReplaceAll, rfIgnoreCase]);
+     Ciag := StringReplace(Ciag, '<w�asny>', '<#'+WlasnyKolor+'>', [rfReplaceAll, rfIgnoreCase]);
 end;
 
 function JavaWordToWord(x:word):word;

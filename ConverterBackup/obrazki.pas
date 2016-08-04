@@ -1,12 +1,10 @@
 unit obrazki;
 
-{$MODE Delphi}
-
 interface
 
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  StdCtrls, ComCtrls, ExtCtrls, Grids, math{, Placemnt, RxGIF};
+  StdCtrls, ComCtrls, ExtCtrls, Grids, math, Placemnt, RxGIF;
 
 type
   TwndObrazki = class(TForm)
@@ -16,7 +14,7 @@ type
     btnZamknij: TButton;
     Obrazki: TStringGrid;
     NazwaObrazka: TLabel;
-   // Pozycja: TFormPlacement;
+    Pozycja: TFormPlacement;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure btnZamknijClick(Sender: TObject);
@@ -37,7 +35,7 @@ implementation
 
 uses Stuff, wndmain, pak;
 
-{$R *.lfm}
+{$R *.DFM}
 
 procedure TwndObrazki.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
@@ -51,7 +49,7 @@ var wart:integer;
 //    MS:TMemoryStream;
 //    X:TGIFImage;
 begin
-    // Pozycja.IniFileName := ExtractFilePath(Application.exename)+'\czat.ini';
+     Pozycja.IniFileName := ExtractFilePath(Application.exename)+'\czat.ini';
      MaxWysokosc := 0;
      MaxSzerokosc := 0;
      For i := 0 to IleObrazkow-1 do

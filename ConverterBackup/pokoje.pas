@@ -1,12 +1,10 @@
 unit pokoje;
 
-{$MODE Delphi}
-
 interface
 
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  StdCtrls, ComCtrls, {OleCtrls, SHDocVw,} ExtCtrls, Stuff;
+  StdCtrls, ComCtrls, OleCtrls, SHDocVw, ExtCtrls, Stuff;
 
 type
   TwndPokoje = class(TForm)
@@ -15,7 +13,7 @@ type
     Label1: TLabel;
     Button1: TButton;
     Panel1: TPanel;
-  //  web: TWebBrowser;
+    web: TWebBrowser;
     PanelWczytywania: TPanel;
     Timer1: TTimer;
     Label2: TLabel;
@@ -47,7 +45,7 @@ Procedure Wczytajkategorie(s:string);
 implementation
 
 uses wndmain, stale;
-{$R *.lfm}
+{$R *.DFM}
 
 Procedure Wczytajkategorie(s:string);
 var slowo:string;
@@ -85,7 +83,7 @@ var Ciagi:TStringArray;
 begin
      if cbKat.Items.Count = 0 then Wczytajkategorie(Listakategorii);
      DeleteFile(plikZPokojami);
-  //   web.Navigate('');
+     web.Navigate('');
      if wndczat = nil then exit;
      Polecenia[1] := P__2S_ROOM_LIST;
      Polecenia[2] := 7;
@@ -125,7 +123,7 @@ begin
      if not FileExists(PlikZPokojami) then exit;
      Timer1.Enabled := False;
      PanelWczytywania.visible := false;
-  //   web.Navigate(plikZPokojami);
+     web.Navigate(plikZPokojami);
 end;
 
 procedure TwndPokoje.FormClose(Sender: TObject; var Action: TCloseAction);

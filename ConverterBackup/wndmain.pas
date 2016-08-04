@@ -1,16 +1,14 @@
 unit wndmain;
 
-{$MODE Delphi}
-
 interface
 
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  StdCtrls, Contnrs, ExtCtrls, Math, Buttons, {ScktComp,}
+  StdCtrls, Contnrs, ExtCtrls, Math, Buttons, ScktComp,
   ComCtrls, Stale, stuff, inifiles, mmsystem, ImgList,
-  {CoolTrayIcon,} Menus, {FtpCli, Gauges,} clipbrd, {RXCtrls,} pak,
-  {KolorNap, TopMost, WSocket,} {Tabs,} Grids, MaskEdit, {ToolEdit, CurrEdit,
-  RXSpin, RxGIF,} nl_elem, ip_parser;
+  CoolTrayIcon, Menus, FtpCli, Gauges, clipbrd, RXCtrls, pak,
+  KolorNap, TopMost, WSocket, Tabs, Grids, Mask, ToolEdit, CurrEdit,
+  RXSpin, RxGIF, nl_elem, ip_parser;
 
 type TWordArray = array[1..1024] of Word;
      TStringArray = array [1..1024] of String;
@@ -26,7 +24,7 @@ type
     zCzat: TTabSheet;
     OdczytZaleglegoBufora: TTimer;
     AntyIdleTimer: TTimer;
-    //czat: TClientSocket;
+    czat: TClientSocket;
     OproznianieBuforaAntyFloodowego: TTimer;
     btnKoloOki1: TImage;
     btnKoloIgnore1: TImage;
@@ -62,7 +60,7 @@ type
     Label10: TLabel;
     edtTekstIDLE: TEdit;
     Label11: TLabel;
-    edtCzestotliwoscAntyIDLE: TEdit;
+    edtCzestotliwoscAntyIDLE: TRxSpinEdit;
     Label12: TLabel;
     chkAntyIDLE: TCheckBox;
     Label1: TLabel;
@@ -90,7 +88,7 @@ type
     TimerMigania: TTimer;
     dlgKolor: TColorDialog;
     Migacz: TImageList;
-    //Tray: TCoolTrayIcon;
+    Tray: TCoolTrayIcon;
     TrayPopupMenu: TPopupMenu;
     Pokaokno1: TMenuItem;
     N1: TMenuItem;
@@ -103,7 +101,7 @@ type
     chkChowajObrazki: TCheckBox;
     GroupBox5: TGroupBox;
     Label28: TLabel;
-    edtIloscKolumn: TEdit;
+    edtIloscKolumn: TRxSpinEdit;
     ListaUserowPopupMenu: TPopupMenu;
     Dodajdoznajomych1: TMenuItem;
     CzatPopupMenu: TPopupMenu;
@@ -131,17 +129,17 @@ type
     btnUsunWszystkieLinki: TSpeedButton;
     btnUsunLink: TSpeedButton;
     btnSortujLinki: TSpeedButton;
-   // KolorowyNapis1: TKolorowyNapis;
+    KolorowyNapis1: TKolorowyNapis;
     Label30: TLabel;
-   // KolorowyNapis2: TKolorowyNapis;
+    KolorowyNapis2: TKolorowyNapis;
     Label31: TLabel;
     Label32: TLabel;
-  //  KolorowyNapis3: TKolorowyNapis;
-  //  NaGorze: TTopMost;
+    KolorowyNapis3: TKolorowyNapis;
+    NaGorze: TTopMost;
     chkOnTop: TCheckBox;
     Czybufor1: TMenuItem;
     menuWpisrevDNS: TMenuItem;
-    //revDNS: TWSocket;
+    revDNS: TWSocket;
     lbLinki: TListView;
     chkPolaczPrzyUruchomieniu: TCheckBox;
     chkAutoDNS: TCheckBox;
@@ -202,7 +200,7 @@ type
     lblIloscPlikowDoSciagniecia: TLabel;
     lblPlik: TLabel;
     Label27: TLabel;
-    Postep: TProgressBar;
+    Postep: TGauge;
     lbListaPlikow: TListBox;
     GroupBox4: TGroupBox;
     Label22: TLabel;
@@ -212,7 +210,7 @@ type
     edtFTPUser: TEdit;
     edtFTPPassword: TEdit;
     LogiFTP: TMemo;
-    //ftp: TFtpClient;
+    ftp: TFtpClient;
     Label37: TLabel;
     lbPozegnania: TListBox;
     Label38: TLabel;
@@ -231,7 +229,7 @@ type
     btnKoloOki: TPaintBox;
     btnKoloIgnore: TPaintBox;
     btnInfo: TPaintBox;
-    ZakladkaOkienek: TTabControl;
+    ZakladkaOkienek: TTabSet;
     ZakladkaPopUp: TPopupMenu;
     Zamknij2: TMenuItem;
     chkObrazki: TCheckBox;
@@ -245,7 +243,7 @@ type
     btnWczytajBany: TButton;
     Label39: TLabel;
     Label40: TLabel;
-    edtBanMinuty: TEdit;
+    edtBanMinuty: TRxCalcEdit;
     lblRozwiniecieCzasu: TLabel;
     btnAktualizujBana: TButton;
     edtIP1: TEdit;
@@ -297,7 +295,7 @@ type
     lblTransfer: TLabel;
     TimerTransferu: TTimer;
     TabSheet1: TTabSheet;
-    //WhoIsSocket: TWSocket;
+    WhoIsSocket: TWSocket;
     edtWhoIsIP: TEdit;
     btnSprawdzInfo: TButton;
     WhoIsMemo: TMemo;
@@ -332,7 +330,7 @@ type
     procedure FormPaint(Sender: TObject);
     procedure ZakladkiDrawTab(Control: TCustomTabControl;
       TabIndex: Integer; const Rect: TRect; Active: Boolean);
- {   procedure czatConnect(Sender: TObject; Socket: TCustomWinSocket);
+    procedure czatConnect(Sender: TObject; Socket: TCustomWinSocket);
     procedure czatConnecting(Sender: TObject; Socket: TCustomWinSocket);
     procedure czatDisconnect(Sender: TObject; Socket: TCustomWinSocket);
     procedure czatError(Sender: TObject; Socket: TCustomWinSocket;
@@ -340,7 +338,6 @@ type
     procedure czatLookup(Sender: TObject; Socket: TCustomWinSocket);
     procedure czatRead(Sender: TObject; Socket: TCustomWinSocket);
     procedure czatWrite(Sender: TObject; Socket: TCustomWinSocket);
-    }
     procedure AntyIdleTimerTimer(Sender: TObject);
     procedure OdczytZaleglegoBuforaTimer(Sender: TObject);
     procedure PolaczClick(Sender: TObject);
@@ -424,7 +421,8 @@ type
     procedure ftpSessionClosed(Sender: TObject; Error: Word);
     procedure ftpSessionConnected(Sender: TObject; Error: Word);
     procedure ftpDisplayFile(Sender: TObject; var Msg: String);
-   // procedure ftpRequestDone(Sender: TObject; RqType: TFtpRequest;
+    procedure ftpRequestDone(Sender: TObject; RqType: TFtpRequest;
+      Error: Word);
     procedure lbPozegnaniaClick(Sender: TObject);
     procedure btnDodajPozegnanieClick(Sender: TObject);
     procedure btnusunPozegnanieClick(Sender: TObject);
@@ -540,9 +538,9 @@ implementation
 
 uses obrazki, wnd_Splash, pokoje;
 
-{$R *.lfm}
+{$R *.DFM}
 /////////////////////////////////////////////////////////////////////////////
-// Pomiar wysoko≈õci i rysowanie poszczeg√≥lnych linii w okienku czata       //
+// Pomiar wysokoúci i rysowanie poszczegÛlnych linii w okienku czata       //
 /////////////////////////////////////////////////////////////////////////////
 /////////////////{$i rys_pom.pas}
 /////////////////////////////////////////////////////////////////////////////
@@ -653,7 +651,7 @@ begin
      Zakladki.ActivePage := zCzat;
      chkAntyFloodAktywnyClick(nil);
      Stos := TStack.Create;
-//////////////////////     Zakladki.OwnerDraw := True;
+     Zakladki.OwnerDraw := True;
      CoTeraz := ctNic;
      edtCzestotliwoscAntyIDLEChange(nil);
 
@@ -698,7 +696,7 @@ begin
           edtCodeBase.Text := r.ReadString('polaczenie','CodeBase', edtCodeBase.Text);
           {}
           edtTekstIdle.Text := r.ReadString('antyidle','TekstIDLE', edtTekstIdle.Text);
-          //////////////////////          edtCzestotliwoscAntyIDLE.Value := r.ReadInteger('antyidle','CzestIDLE', Trunc(edtCzestotliwoscAntyIDLE.Value));
+          edtCzestotliwoscAntyIDLE.Value := r.ReadInteger('antyidle','CzestIDLE', Trunc(edtCzestotliwoscAntyIDLE.Value));
           chkAntyIdle.checked := r.ReadBool('antyidle','AntyIDLE', chkAntyIdle.checked);
           {}
           chkUsuwajDuble.Checked := r.ReadBool('antyflood','UsuwajDuble', chkUsuwajDuble.Checked);
@@ -708,8 +706,8 @@ begin
           chkIkonkaWPaskuZegara.Checked := r.ReadBool('ustawienia','TrayIcon' ,chkIkonkaWPaskuZegara.Checked);
           chkMinimalizacja.Checked := r.ReadBool('ustawienia','Minimalizacja' ,chkMinimalizacja.Checked);
           chkChowajObrazki.Checked := r.ReadBool('ustawienia','ChowajObrazki' ,chkChowajObrazki.Checked);
-          //////////////////////          edtIloscKolumn.Value := r.ReadInteger('ustawienia','IloscKolumn', Trunc(edtIloscKolumn.Value));
-          //////////////////////          IloscKolumnObrazkow := Trunc(edtIloscKolumn.Value);
+          edtIloscKolumn.Value := r.ReadInteger('ustawienia','IloscKolumn', Trunc(edtIloscKolumn.Value));
+          IloscKolumnObrazkow := Trunc(edtIloscKolumn.Value);
           KolorCzasu := r.ReadString('ustawienia','kolorczasu', KolorCzasu);
           lblPrzykladCzasu.Font.Color := HTMLColorToDelphi(KolorCzasu);
           chkCzasWypowiedzi.Checked := r.ReadBool('ustawienia','PokazujCzas' ,chkCzasWypowiedzi.Checked);
@@ -843,7 +841,7 @@ begin
                bmp := TBitmap.Create;
                bmp.Height := gif.Height;
                bmp.width := gif.Width;
- //////////////////////              gif.Frames[0].Draw(bmp.canvas, rect(0, 0, bmp.width, bmp.height), False);
+               gif.Frames[0].Draw(bmp.canvas, rect(0, 0, bmp.width, bmp.height), False);
                TablicaObrazkow[i].bitmap := bmp;
                gif.free;
           end;
@@ -877,7 +875,7 @@ begin
      r.WriteString('polaczenie', 'CodeBase', edtCodeBase.Text);
      {}
      r.WriteString('antyidle', 'TekstIDLE', edtTekstIdle.Text);
-     //////////////////////     r.WriteInteger('antyidle', 'CzestIDLE', Trunc(edtCzestotliwoscAntyIDLE.Value));
+     r.WriteInteger('antyidle', 'CzestIDLE', Trunc(edtCzestotliwoscAntyIDLE.Value));
      r.WriteBool('antyidle', 'AntyIDLE', chkAntyIdle.checked);
      {}
      r.WriteBool('antyflood', 'UsuwajDuble', chkUsuwajDuble.Checked);
@@ -887,7 +885,7 @@ begin
      r.WriteBool('ustawienia','TrayIcon', chkIkonkaWPaskuZegara.Checked);
      r.WriteBool('ustawienia','Minimalizacja' ,chkMinimalizacja.Checked);
      r.WriteBool('ustawienia','ChowajObrazki' ,chkChowajObrazki.Checked);
-     //////////////////////     r.WriteInteger('ustawienia','IloscKolumn', Trunc(edtIloscKolumn.Value));
+     r.WriteInteger('ustawienia','IloscKolumn', Trunc(edtIloscKolumn.Value));
      r.WriteString('ustawienia','kolorczasu', KolorCzasu);
      r.WriteBool('ustawienia','PokazujCzas' ,chkCzasWypowiedzi.Checked);
      r.WriteBool('ustawienia','linkizglownego' ,chkDodawajLinkiZGlownego.Checked);
@@ -1080,31 +1078,28 @@ end;
 
 procedure TwndCzat.OdczytZaleglegoBuforaTimer(Sender: TObject);
 begin
-     //////////////////////     if not Czat.Active then exit;
-     //////////////////////     CzatRead(Sender, Czat.Socket);
+     if not Czat.Active then exit;
+     CzatRead(Sender, Czat.Socket);
 end;
 
 procedure TwndCzat.AntyIdleTimerTimer(Sender: TObject);
 begin
      if not chkAntyIdle.Checked then exit;
-     //////////////////////     if not Czat.Active then exit;
+     if not Czat.Active then exit;
      Powiedz(edtTekstIdle.Text);
 end;
-{
+
 procedure TwndCzat.czatError(Sender: TObject; Socket: TCustomWinSocket;
   ErrorEvent: TErrorEvent; var ErrorCode: Integer);
 begin
-     Log.Lines.Add('B≈ÇƒÖd #'+IntToStr(ErrorCode));
+     Log.Lines.Add('B≥πd #'+IntToStr(ErrorCode));
      ErrorCode := 0;
      Czat.Active := false;
 end;
-}
-{
+
 procedure TwndCzat.czatLookup(Sender: TObject; Socket: TCustomWinSocket);
 begin Log.Lines.Add('Wyszukiwanie wpisu w serwerze DNS...'); end;
-}
 
-{
 // odczytywanie pakietow z serwera
 procedure TwndCzat.czatRead(Sender: TObject; Socket: TCustomWinSocket);
 var l:integer;
@@ -1115,7 +1110,7 @@ var l:integer;
     i:integer;
     DummyWord:Word;
     Buf:PChar;
-
+{    f:file;}
 begin
      l := Socket.ReceiveBuf(Dlugosc, 4);
      if l = 0 then exit;
@@ -1124,9 +1119,9 @@ begin
      if Dlugosc < 10 then exit;
      if Dlugosc > 4000 then exit;
 
-//     assignfile(f, 'pakiety\'+inttostr(licznikpakietow));
-//     inc(licznikpakietow);
- //    rewrite(f,1);
+{     assignfile(f, 'pakiety\'+inttostr(licznikpakietow));
+     inc(licznikpakietow);
+     rewrite(f,1);}
 
      Socket.ReceiveBuf(IloscPolecen, 2);
 //                        BlockWrite(f, IloscPolecen, 2);
@@ -1154,10 +1149,10 @@ begin
           Ciagi[i] := StrPas(Buf);
           FreeMem(Buf, DummyWord+1);
      end;
-//     closefile(f);
+{     closefile(f);}
      Interpretuj(IloscPolecen, Polecenia, IloscCiagow, Ciagi);
 end;
-        }
+
 procedure TwndCzat.WyczyscListeUserow;
 var i:integer;
     Czatowicz:PCzatowicz;
@@ -1410,17 +1405,17 @@ begin
                     tekst2 := StringReplace(tekst2, ')', '', []);
                     ListaZaleglychNumerowIP.Items.Add(UpperCase(nick)+' '+tekst2);
                     DodajDoOknaCzata(0, '<font color=#000000>- Oczekiwanie na odpowiedz z serwera DNS...</font>');
-//////////////////////                    revDNS.ReverseDnsLookup(tekst2);
+                    revDNS.ReverseDnsLookup(tekst2);
                     exit;
                end;
-               if Copy(tekst2, 1, 27) = '** "ban-lista" adres√≥w ip: ' then
+               if Copy(tekst2, 1, 27) = '** "ban-lista" adresÛw ip: ' then
                begin
                     Delete(Tekst2, 1, 27);
                     WczytajDoListyBanow(Tekst2);
                     exit;
                end;
-               //** u≈ºytkownik: szwed, obecny w pokoju: kutno, zalogowany przez: 1g,12min, brak aktywno≈õci przez: 0m,16sek, ip: 217.209.156.25
-               if Copy(tekst2, 1, 14) = '** u≈ºytkownik:' then
+               //** uøytkownik: szwed, obecny w pokoju: kutno, zalogowany przez: 1g,12min, brak aktywnoúci przez: 0m,16sek, ip: 217.209.156.25
+               if Copy(tekst2, 1, 14) = '** uøytkownik:' then
                begin
                     Delete(tekst2, 1, 14);
                     nick := UpperCase(Trim(copy(tekst2, 1, pos(',', tekst2)-1)));
@@ -1514,7 +1509,7 @@ begin
 
 end;
 //------------------------------
-           {
+
 procedure TwndCzat.czatWrite(Sender: TObject; Socket: TCustomWinSocket);
 var Ciagi:TStringArray;
     Polecenia:TWordArray;
@@ -1539,7 +1534,6 @@ begin
        end;
      end;
 end;
-       }
 
 Procedure TwndCzat.Busy(Busy:Boolean);
 var Ciagi:TStringArray;
@@ -1556,7 +1550,7 @@ procedure TwndCzat.PowiedzNaPolczat(s:String);
 var Polecenia:TWordArray;
     Ciagi:TStringArray;
 begin
-     //////////////////////     if not Czat.Active then exit;
+     if not Czat.Active then exit;
      // translacja
      ZamienKolory(s);
      WindowsCodesToJava(s);
@@ -1567,7 +1561,7 @@ begin
 end;
 
 
-// Wysy≈Çanie bloku danych do serwera
+// Wysy≥anie bloku danych do serwera
 procedure TwndCzat.Wyslij(Polecenia:TWordArray; IloscPolecen:Byte; Ciagi:TStringArray; IloscCiagow:Byte);
 var Dlugosc:Longint;
     i:word;
@@ -1607,7 +1601,7 @@ begin
           Strumien.Write(DummyWord, 1);
      end;
      DummyWord := Strumien.Size;
-     //////////////////////     Czat.Socket.SendBuf(Strumien.Memory^, DummyWord);
+     Czat.Socket.SendBuf(Strumien.Memory^, DummyWord);
      Strumien.Free;
 
 end;
@@ -1621,28 +1615,25 @@ end;
 
 procedure TwndCzat.PolaczClick(Sender: TObject);
 begin
-     //////////////////////     Czat.Host := edtServer.Text;
-     //////////////////////     Czat.Port := StrToInt(edtPort.text);
+     Czat.Host := edtServer.Text;
+     Czat.Port := StrToInt(edtPort.text);
      CoTeraz := ctLogin;
      Ustawienia.Lines.Clear;
 //     SprawdzanieAktywnosciPolaczenia.Enabled := False;
      TimerPrzyciskuPolacz.Enabled := True;
-
-     {
      if Czat.Active  = True then
      begin
           PozegnajSie;
           Czat.Active := false;
-          Polacz.Caption := 'Po≈ÇƒÖcz';
+          Polacz.Caption := 'Po≥πcz';
      end else
      begin
           Czat.Active := True;
-          Polacz.Caption := 'Roz≈ÇƒÖcz';
+          Polacz.Caption := 'Roz≥πcz';
           if Zakladki.ActivePage = zCzat then exit;
           Zakladki.ActivePage := zCzat;
           ZakladkiChange(nil);
      end;
-     }
 end;
 
 procedure TwndCzat.ustawPrzedrostek;
@@ -1669,7 +1660,7 @@ begin
      isOp := false;
      with TListBox(Control).Canvas do
      begin
-      //////////////////////    if odSelected in State then brush.Color := clSilver;
+          if odSelected in State then brush.Color := clSilver;
           if Czatowicz^.isBusy then font.Style := font.Style + [fsBold];
           if Czatowicz^.isOp then
           begin
@@ -1747,8 +1738,6 @@ end;
 
 procedure TwndCzat.btnBanClick(Sender: TObject);
 var nick:string;
-//end;
-
 {    i:integer;}
 begin
      if ListaUserow.ItemIndex = -1 then exit;
@@ -1869,7 +1858,7 @@ end;
 procedure TwndCzat.DrzewoChange(Sender: TObject; Node: TTreeNode);
 begin
      lblNazwaZakladki.Caption := Drzewo.Selected.Text;
-     //////////////////////     Notebook1.ActivePage := Drzewo.Selected.Text;
+     Notebook1.ActivePage := Drzewo.Selected.Text;
 end;
 
 
@@ -1883,7 +1872,7 @@ procedure TwndCzat.TimerMiganiaTimer(Sender: TObject);
 begin
      if wndczat.Active then TimerMigania.enabled := false;
      FlashWindow(MIgajTymOknem, true);
-     //////////////////////     FlashWindow(application.handle, true);
+     FlashWindow(application.handle, true);
 end;
 
 Procedure TwndCzat.WlaczMiganie(Uchwyt:THandle);
@@ -1912,19 +1901,17 @@ end;
 procedure TwndCzat.TimerTrayBaraTimer(Sender: TObject);
 begin
      TimerTrayBara.Enabled := false;
-     {
      Tray.CycleIcons := False;
      Tray.IconList := OczkaOtwarte;
      Tray.CycleInterval := 500;
      Tray.CycleIcons := True;
-     }
 end;
 
 procedure TwndCzat.TrayDblClick(Sender: TObject);
 begin
-      //////////////////////         if Tray.MinimizeToTray
-      //////////////////////         then wndCzat.Show
-      //////////////////////         else wndczat.WindowState := wsNormal;
+     if Tray.MinimizeToTray
+     then wndCzat.Show
+     else wndczat.WindowState := wsNormal;
 end;
 
 
@@ -1945,9 +1932,7 @@ end;
 procedure TwndCzat.Ukryjokno1Click(Sender: TObject);
 begin wndCzat.Hide; end;
 procedure TwndCzat.chkIkonkaWpaskuZegaraClick(Sender: TObject);
-begin
-     //////////////////////     Tray.IconVisible := chkIkonkaWPaskuZegara.Checked;
-end;
+begin Tray.IconVisible := chkIkonkaWPaskuZegara.Checked; end;
 procedure TwndCzat.Pokaokno1Click(Sender: TObject);
 begin wndCzat.Show; end;
 procedure TwndCzat.Zamknij1Click(Sender: TObject);
@@ -1967,17 +1952,13 @@ begin OdpalLinka('mailto:kutno@wp.pl'); end;
 procedure TwndCzat.KolorowyNapis3Click(Sender: TObject);
 begin OdpalLinka('mailto:dmc@op.pl'); end;
 procedure TwndCzat.chkOnTopClick(Sender: TObject);
-begin
-     //////////////////////          NaGorze.TopMost := chkOnTop.Checked;
-end;
+begin NaGorze.TopMost := chkOnTop.Checked; end;
 procedure TwndCzat.btnUsunWszystkieLinkiClick(Sender: TObject);
 begin lbLinki.Items.Clear; end;
 procedure TwndCzat.lbLinkiKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
 begin if Key = VK_DELETE then btnUsunLinkClick(nil); end;
 procedure TwndCzat.edtCzestotliwoscAntyIDLEChange(Sender: TObject);
-begin
-     //////////////////////          AntyIdleTimer.Interval := Trunc(edtCzestotliwoscAntyIdle.Value)*1000;
-end;
+begin AntyIdleTimer.Interval := Trunc(edtCzestotliwoscAntyIdle.Value)*1000; end;
 procedure TwndCzat.DrzewoEditing(Sender: TObject; Node: TTreeNode; var AllowEdit: Boolean);
 begin AllowEdit := false; end;
 procedure TwndCzat.btnCzyscLogowanieLaczeniaClick(Sender: TObject);
@@ -2000,37 +1981,32 @@ procedure TwndCzat.btnPrivMouseUp(Sender: TObject; Button: TMouseButton; Shift: 
 begin TPaintBox(Sender).canvas.Draw(0, 0, btnPriv0.Picture.Graphic); end;
 procedure TwndCzat.btnInfoMouseUp(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
 begin TPaintBox(Sender).canvas.Draw(0, 0, btnInfo0.Picture.Graphic); end;
-
-{
 procedure TwndCzat.czatConnect(Sender: TObject; Socket: TCustomWinSocket);
-begin Log.Lines.Add('NawiƒÖzano po≈ÇƒÖczenie '+Socket.RemoteHost+' ('+Socket.RemoteAddress+')'); end;
+begin Log.Lines.Add('Nawiπzano po≥πczenie '+Socket.RemoteHost+' ('+Socket.RemoteAddress+')'); end;
 procedure TwndCzat.czatConnecting(Sender: TObject; Socket: TCustomWinSocket);
-begin Log.Lines.Add('≈ÅƒÖczenie z serwerem '+edtServer.text+':'+edtPort.text+'...'); end;
+begin Log.Lines.Add('£πczenie z serwerem '+edtServer.text+':'+edtPort.text+'...'); end;
 procedure TwndCzat.czatDisconnect(Sender: TObject; Socket: TCustomWinSocket);
 begin
-     Log.Lines.Add('Po≈ÇƒÖczenie zako≈Ñczone');
+     Log.Lines.Add('Po≥πczenie zakoÒczone');
      Tray.IconList := OczkaSpiace;
 
-     DodajDoOknaCzata(0, '<font color=#000000>- Po≈ÇƒÖczenie zako≈Ñczone </font>');
+     DodajDoOknaCzata(0, '<font color=#000000>- Po≥πczenie zakoÒczone </font>');
 end;
-          }
+
 
 
 procedure TwndCzat.chkMinimalizacjaClick(Sender: TObject);
 begin
-     //////////////////////          Tray.MinimizeToTray := chkMinimalizacja.Checked;
+     Tray.MinimizeToTray := chkMinimalizacja.Checked;
 end;
 
 procedure TwndCzat.SpeedButton1Click(Sender: TObject);
 begin
-     {
      if czat.active then
      begin
           PolaczClick(nil);
           PolaczClick(nil);
      end;
-     }
-
 end;
 
 procedure TwndCzat.ListaUserowDblClick(Sender: TObject);
@@ -2163,7 +2139,7 @@ end;
 
 procedure TwndCzat.StatusBarUpdateTimer(Sender: TObject);
 begin
-     StatusBar1.Panels[1].Text := 'Ilo≈õƒá priv√≥w: '+IntToStr(ZakladkaOkienek.Tabs.Count-1);
+     StatusBar1.Panels[1].Text := 'IloúÊ privÛw: '+IntToStr(ZakladkaOkienek.Tabs.Count-1);
      StatusBar1.Panels[0].text := FormatDateTime('dd mmmm "("dddd")" yyyy", godzina " hh:mm:ss', Now);
      StatusBar1.Panels[2].text := 'Local IP: '+LocalIP;
      if (OldPrvCount = 0) and (ZakladkaOkienek.Tabs.Count-1 > 0) then Busy(True);
@@ -2174,7 +2150,7 @@ begin
 end;
 
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-// zak≈Çadka Ustawienia
+// zak≥adka Ustawienia
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 procedure TwndCzat.btnUstawKolorCzasuClick(Sender: TObject);
@@ -2194,10 +2170,9 @@ procedure TwndCzat.btnAktualizujClick(Sender: TObject);
 var f:textfile;
     v:string;
 begin
-     {
      if ftp.state <> ftpReady then
      begin
-          LogiFTP.Lines.Add('Proszƒô poczekaƒá na zako≈Ñczenie poprzedniego polecenia');
+          LogiFTP.Lines.Add('ProszÍ poczekaÊ na zakoÒczenie poprzedniego polecenia');
           exit;
      end;
      LogiFTP.Lines.Clear;
@@ -2208,7 +2183,7 @@ begin
      ftp.LocalFileName := 'lista.txt';
      if not ftp.Connect then
      begin
-          MessageDlg('Nie mog≈Çem po≈ÇƒÖczyƒá siƒô z '+FTP.HostName, mtError, [mbOk], 0);
+          MessageDlg('Nie mog≥em po≥πczyÊ siÍ z '+FTP.HostName, mtError, [mbOk], 0);
           exit;
      end;
      ftp.Size;
@@ -2226,20 +2201,19 @@ begin
           closefile(f);
      end else
      begin
-          MessageDlg('Nie mog≈Çem pobraƒá listy plik√≥w do pobrania', mtError, [mbOk], 0);
+          MessageDlg('Nie mog≥em pobraÊ listy plikÛw do pobrania', mtError, [mbOk], 0);
           ftp.Quit;
           exit;
      end;
      lblIloscPlikowDoSciagniecia.Caption := IntToStr(lbListaPlikow.Items.Count);
      ftp.Quit;
      btnPobierzPlikiClick(nil);
-     }
 end;
 
 procedure TwndCzat.ftpProgress(Sender: TObject; Count: Integer;
   var Abort: Boolean);
 begin
-     Postep.Position := count;
+     Postep.Progress := count;
      TransferWartosc := count;
 end;
 
@@ -2247,11 +2221,10 @@ procedure TwndCzat.btnPobierzPlikiClick(Sender: TObject);
 var i:integer;
     plik:string;
 begin
-     {
      if lbListaPlikow.items.Count = 0 then exit;
      if ftp.state <> ftpReady then
      begin
-          LogiFTP.Lines.Add('Proszƒô poczekaƒá na zako≈Ñczenie poprzedniego polecenia');
+          LogiFTP.Lines.Add('ProszÍ poczekaÊ na zakoÒczenie poprzedniego polecenia');
           exit;
      end;
      LogiFTP.Lines.Clear;
@@ -2260,11 +2233,11 @@ begin
      ftp.Password := edtFTPPassword.Text;
      if not ftp.Connect then
      begin
-          MessageDlg('Nie mog≈Çem po≈ÇƒÖczyƒá siƒô z '+FTP.HostName, mtError, [mbOk], 0);
+          MessageDlg('Nie mog≥em po≥πczyÊ siÍ z '+FTP.HostName, mtError, [mbOk], 0);
           exit;
      end;
-         //////////////////////      {$I-}
- {    MkDir('nowa_wersja');
+     {$I-}
+     MkDir('nowa_wersja');
      for i := 0 to lbListaPlikow.Items.Count-1 do
      begin
           plik := lbListaPlikow.Items[0];
@@ -2283,24 +2256,22 @@ begin
           postep.MaxValue := ftp.SizeResult;
           if not ftp.Get then
           begin
-               MessageDlg('Nie mog≈Çem pobraƒá pliku '+ftp.HostFileName, mtError, [mbOk], 0);
+               MessageDlg('Nie mog≥em pobraÊ pliku '+ftp.HostFileName, mtError, [mbOk], 0);
                ftp.Quit;
                exit;
           end;
      end;
      ftp.Quit;
      lblPlik.Caption := '';
-     }
 end;
 
 procedure TwndCzat.btnSprawdzWersjeClick(Sender: TObject);
 var f:textfile;
     v:string;
 begin
-     {
      if ftp.state <> ftpReady then
      begin
-          LogiFTP.Lines.Add('Proszƒô poczekaƒá na zako≈Ñczenie poprzedniego polecenia');
+          LogiFTP.Lines.Add('ProszÍ poczekaÊ na zakoÒczenie poprzedniego polecenia');
           exit;
      end;
      LogiFTP.Lines.Clear;
@@ -2311,7 +2282,7 @@ begin
      ftp.LocalFileName := 'numer.dat';
      if not ftp.Connect then
      begin
-          MessageDlg('Nie mog≈Çem po≈ÇƒÖczyƒá siƒô z '+FTP.HostName, mtError, [mbOk], 0);
+          MessageDlg('Nie mog≥em po≥πczyÊ siÍ z '+FTP.HostName, mtError, [mbOk], 0);
           exit;
      end;
      ftp.Size;
@@ -2323,28 +2294,26 @@ begin
           readln(f, v);
           lblNajnowszaWersja.Caption := v;
           closefile(f);
-     end else MessageDlg('Nie mog≈Çem pobraƒá pliku z numerem wersji z serwera', mtError, [mbOk], 0);
+     end else MessageDlg('Nie mog≥em pobraÊ pliku z numerem wersji z serwera', mtError, [mbOk], 0);
      ftp.Quit;
      if lblWersjaCzata.caption <> lblNajnowszaWersja.caption then
      begin
            MessageDlg('Na serwerze znajduje sie prawdopodobnie nowsza wersja czata. Zapraszam do aktualizacji.', mtInformation, [mbOk], 0);
      end;
-           }
+
 end;
 
 procedure TwndCzat.ftpSessionClosed(Sender: TObject; Error: Word);
-begin Postep.Position := 0; LogiFTP.Lines.Add('Koniec po≈ÇƒÖczenia'); end;
+begin Postep.Progress := 0; LogiFTP.Lines.Add('Koniec po≥πczenia'); end;
 procedure TwndCzat.ftpSessionConnected(Sender: TObject; Error: Word);
-begin LogiFTP.Lines.Add('Po≈ÇƒÖczenie nawiƒÖzane'); end;
+begin LogiFTP.Lines.Add('Po≥πczenie nawiπzane'); end;
 procedure TwndCzat.ftpDisplayFile(Sender: TObject; var Msg: String);
 begin LogiFTP.Lines.Add(msg); end;
-{
 procedure TwndCzat.ftpRequestDone(Sender: TObject; RqType: TFtpRequest; Error: Word);
-begin if RqType = ftpConnectAsync then LogiFTP.Lines.Add('≈ÅƒÖczenie z '+ftp.hostname); end;
- }
+begin if RqType = ftpConnectAsync then LogiFTP.Lines.Add('£πczenie z '+ftp.hostname); end;
 
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-// edycja s≈Ç√≥w kluczowych
+// edycja s≥Ûw kluczowych
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 procedure TwndCzat.btnDodajSlowoClick(Sender: TObject);
@@ -2499,7 +2468,7 @@ begin
 end;
 
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-// Otwieranie plikow WAV do poszczegolnych zdarze≈Ñ
+// Otwieranie plikow WAV do poszczegolnych zdarzeÒ
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 procedure TwndCzat.btnWejscieOtworzWavClick(Sender: TObject);
 begin
@@ -2544,7 +2513,7 @@ begin
 end;
 
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-//  Obs≈Çuga okna czata i bufora czata
+//  Obs≥uga okna czata i bufora czata
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 procedure TwndCzat.WykonajPomiar(var Item:String; var LiniaHTML:TLiniaHTML);
 var i, j:longint;
@@ -3074,7 +3043,7 @@ begin
      if JestemOpem and (ipki.Count > 0) then
      begin
           SprawdzCzySaLinki;
-          poz := Pos('"ban-lista" adres√≥w ip:', linia2);
+          poz := Pos('"ban-lista" adresÛw ip:', linia2);
           if poz > 0 then
           begin
                Ipki.Free;
@@ -3118,7 +3087,7 @@ begin
      IP := Trim(Copy(IP, Pos(':', IP)+1, Length(IP)));
      OknoRevDNS := NumerOknaCzata;
      DodajDoOknaCzata(OknoRevDNS, '<font color=#000000>- Oczekiwanie na odpowiedz z serwera DNS...</font>');
-      //////////////////////         revDNS.ReverseDnsLookup(IP);
+     revDNS.ReverseDnsLookup(IP);
 end;
 
 procedure TwndCzat.revDNSDnsLookupDone(Sender: TObject; Error: Word);
@@ -3126,15 +3095,15 @@ var i:integer;
 begin
       if Error = 0 then
       begin
-                //////////////////////     DodajDoOknaCzata(OknoRevDNS, '<font color=#000000>- Ilo≈õƒá host√≥w: <b>'+IntToStr(revDNS.DnsResultList.Count)+'</b></font>');
-      //////////////////////               for i := 0 to revDNS.DnsResultList.Count-1 do
-      //////////////////////               DodajDoOknaCzata(OknoRevDNS, '<font color=#000000>- ['+IntToStr(i+1)+']: <b>'+revDNS.DnsResultList[i]+'</b></font>');
+           DodajDoOknaCzata(OknoRevDNS, '<font color=#000000>- IloúÊ hostÛw: <b>'+IntToStr(revDNS.DnsResultList.Count)+'</b></font>');
+           for i := 0 to revDNS.DnsResultList.Count-1 do
+           DodajDoOknaCzata(OknoRevDNS, '<font color=#000000>- ['+IntToStr(i+1)+']: <b>'+revDNS.DnsResultList[i]+'</b></font>');
       end
       else
       begin
            if Error <> 11004
-              then DodajDoOknaCzata(OknoRevDNS, '<font color=#000000>- B≈ÇƒÖd <b>#'+IntToStr(Error)+'</b></font>')
-              else DodajDoOknaCzata(OknoRevDNS, '<font color=#000000>- <b>Nie mog≈Çem znale≈∫ƒá wpisu revDNS</b></font>')
+              then DodajDoOknaCzata(OknoRevDNS, '<font color=#000000>- B≥πd <b>#'+IntToStr(Error)+'</b></font>')
+              else DodajDoOknaCzata(OknoRevDNS, '<font color=#000000>- <b>Nie mog≥em znaleüÊ wpisu revDNS</b></font>')
       end;
 
 end;
@@ -3189,7 +3158,7 @@ end;
 
 
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-// Zak≈Çadka okienek priv i okna czata
+// Zak≥adka okienek priv i okna czata
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 procedure TwndCzat.ZakladkaOkienekMeasureTab(Sender: TObject;
   Index: Integer; var TabWidth: Integer);
@@ -3197,7 +3166,7 @@ var t:string;
 begin
      t := IntToStr(Index+1)+': ';
      t := t + ZakladkaOkienek.Tabs[Index];
-     //////////////////////          TabWidth := ZakladkaOkienek.Canvas.TextWidth(t);
+     TabWidth := ZakladkaOkienek.Canvas.TextWidth(t);
 end;
 
 procedure TwndCzat.ZakladkaOkienekDrawTab(Sender: TObject;
@@ -3449,14 +3418,14 @@ end;
 
 
 procedure TwndCzat.TimerListyUserowTimer(Sender: TObject);
-begin lblIloscUserow.Caption := 'Czatowicz√≥w: '+IntToStr(ListaUserow.Items.count); end;
+begin lblIloscUserow.Caption := 'CzatowiczÛw: '+IntToStr(ListaUserow.Items.count); end;
 
 procedure TwndCzat.btnPolchatClick(Sender: TObject);
 begin
 end;
 
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-// Edytor ban√≥w
+// Edytor banÛw
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 procedure TwndCzat.sgBanySetEditText(Sender: TObject; ACol, ARow: Integer;
@@ -3470,7 +3439,7 @@ procedure TwndCzat.btnWczytajBanyClick(Sender: TObject);
 begin
      if not JestemOpem then
      begin
-          MessageDlg('Sorry, ale nie jeste≈õ opem :(', mtError, [mbOk], 0);
+          MessageDlg('Sorry, ale nie jesteú opem :(', mtError, [mbOk], 0);
           exit;
      end;
      Powiedz('/bans');
@@ -3479,7 +3448,7 @@ end;
 
 procedure TwndCzat.edtBanMinutyChange(Sender: TObject);
 begin
-     lblRozwiniecieCzasu.caption := IleSiedzi(trunc(StrToInt(edtBanMinuty.Text)));
+     lblRozwiniecieCzasu.caption := IleSiedzi(trunc(edtBanMinuty.value));
 end;
 
 procedure TwndCzat.sgBanyClick(Sender: TObject);
@@ -3489,10 +3458,10 @@ begin
      if sgBany.Row = 0 then exit;
      try
         if sgBany.Cells[1, sgBany.Row] = ''
-           then edtBanMinuty.Text := '0'
-           else edtBanMinuty.Text := sgBany.Cells[1, sgBany.Row];
+           then edtBanMinuty.value := 0
+           else edtBanMinuty.value := StrToInt(sgBany.Cells[1, sgBany.Row]);
      except
-        edtBanMinuty.Text := '0';
+        edtBanMinuty.value := 0;
      end;
      a := sgBany.Cells[0, sgBany.Row];
      edtIP1.Text := Copy(a, 1, pos('.', a)-1);
@@ -3511,12 +3480,12 @@ begin
      if sgBany.Row = 0 then exit;
      if not JestemOpem then
      begin
-          MessageDlg('Sorry, ale nie jeste≈õ opem :(', mtError, [mbOk], 0);
+          MessageDlg('Sorry, ale nie jesteú opem :(', mtError, [mbOk], 0);
           exit;
      end;
      Powiedz('/unban '+sgBany.Cells[0, sgBany.Row]);
      sgBany.Cells[0, sgBany.Row] := edtIP1.Text+'.'+edtIP2.Text+'.'+edtIP3.Text+'.'+edtIP4.Text;
-     sgBany.Cells[1, sgBany.Row] := edtBanMinuty.Text;
+     sgBany.Cells[1, sgBany.Row] := IntToStr(Trunc(edtBanMinuty.value));
      Powiedz('/banip '+sgBany.Cells[0, sgBany.Row]+' '+sgBany.Cells[1, sgBany.Row]);
 end;
 
@@ -3566,7 +3535,7 @@ begin
      if sgBany.Row = 0 then exit;
      if not JestemOpem then
      begin
-          MessageDlg('Sorry, ale nie jeste≈õ opem :(', mtError, [mbOk], 0);
+          MessageDlg('Sorry, ale nie jesteú opem :(', mtError, [mbOk], 0);
           exit;
      end;
      Powiedz('/unban '+sgBany.Cells[0, sgBany.Row]);
@@ -3706,15 +3675,13 @@ end;
 procedure TwndCzat.btnSprawdzInfoClick(Sender: TObject);
 begin
      WhoIsMemo.Lines.Clear;
-     {
      WhoIsSocket.Close;
      while WhoIsSocket.State <> wsClosed do
            Application.Processmessages;
      WhoIsSocket.Addr := '193.0.0.135';
      WhoIsSocket.Port := '43';
-     WhoIsMemo.Lines.Add('≈ÅƒÖczenie z serwerem whois.ripe.net (193.0.0.135)...');
+     WhoIsMemo.Lines.Add('£πczenie z serwerem whois.ripe.net (193.0.0.135)...');
      WhoIsSocket.Connect;
-     }
 end;
 
 procedure TwndCzat.WhoIsSocketDataAvailable(Sender: TObject; Error: Word);
@@ -3722,7 +3689,7 @@ var s:string;
     linia:string;
     poz:integer;
 begin
-     //s := WhoIsSocket.Text;
+     s := WhoIsSocket.Text;
      while length(s) > 0 do
      begin
           poz := pos(#$0A, s);
@@ -3741,16 +3708,16 @@ end;
 
 procedure TwndCzat.WhoIsSocketSessionConnected(Sender: TObject; Error: Word);
 begin
-     WhoIsMemo.Lines.Add('NawiƒÖza≈Çem po≈ÇƒÖczenie. Oczekuje na dane...');
+     WhoIsMemo.Lines.Add('Nawiπza≥em po≥πczenie. Oczekuje na dane...');
      WhoIsMemo.Lines.Add('');
-          //////////////////////     WhoIsSocket.SendStr(edtWhoIsIP.text+#13#10);
+     WhoIsSocket.SendStr(edtWhoIsIP.text+#13#10);
 end;
 
 procedure TwndCzat.WhoIsSocketSessionClosed(Sender: TObject; Error: Word);
 begin
      if Error = 0
-        then WhoIsMemo.Lines.Add('Po≈ÇƒÖczenie zako≈Ñczone')
-        else WhoIsMemo.Lines.Add('Po≈ÇƒÖczenie zako≈Ñczone (kod b≈Çƒôdu #'+IntToStr(Error)+')');
+        then WhoIsMemo.Lines.Add('Po≥πczenie zakoÒczone')
+        else WhoIsMemo.Lines.Add('Po≥πczenie zakoÒczone (kod b≥Ídu #'+IntToStr(Error)+')');
 end;
 
 
