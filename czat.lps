@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="9"/>
+    <BuildModes Active="Debug"/>
+    <Units Count="1">
+      <Unit0>
+        <Filename Value="czat.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <CursorPos X="17" Y="4"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit0>
+    </Units>
+    <JumpHistory Count="6" HistoryIndex="5">
+      <Position1>
+        <Filename Value="czat.lpr"/>
+        <Caret Line="12" Column="16" TopLine="39"/>
+      </Position1>
+      <Position2>
+        <Filename Value="czat.lpr"/>
+        <Caret Line="11" Column="16" TopLine="6"/>
+      </Position2>
+      <Position3>
+        <Filename Value="czat.lpr"/>
+        <Caret Line="17" TopLine="6"/>
+      </Position3>
+      <Position4>
+        <Filename Value="czat.lpr"/>
+        <Caret Line="18" TopLine="6"/>
+      </Position4>
+      <Position5>
+        <Filename Value="czat.lpr"/>
+        <Caret Line="53" TopLine="39"/>
+      </Position5>
+      <Position6>
+        <Filename Value="czat.lpr"/>
+        <Caret Line="54" TopLine="39"/>
+      </Position6>
+    </JumpHistory>
+  </ProjectSession>
+  <SkipCheckLCLInterfaces Value="True"/>
+</CONFIG>

@@ -1,6 +1,9 @@
 program czat;
-Uses Windows, SysUtils, Dialogs, shellapi;
-{$R *.RES}
+
+{$MODE Delphi}
+
+Uses Interfaces, Windows, SysUtils, Dialogs, shellapi;
+{$R *.res}
 var plik:string;
     f:textfile;
     we,wy:file;
@@ -14,7 +17,7 @@ begin
      MkDir('nowa_wersja');
      if (IOResult <> 0) and FileExists('lista.txt') then
      begin
-          ShowMessage('Teraz nast¹pi dokoñczenie aktualizacji programu...');
+          ShowMessage('Teraz nastÄ…pi dokoÅ„czenie aktualizacji programu...');
           assignfile(f, 'lista.txt');
           reset(f);
           while not eof(f) do
