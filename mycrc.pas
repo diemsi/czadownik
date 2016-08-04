@@ -1,4 +1,7 @@
 unit mycrc;
+
+{$MODE Delphi}
+
 interface
 uses windows;
 procedure makecrc32table;

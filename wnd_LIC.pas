@@ -1,4 +1,7 @@
 unit wnd_LIC;
+
+{$MODE Delphi}
+
 interface
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
@@ -23,7 +26,7 @@ var
 
 implementation
 
-{$R *.DFM}
+{$R *.lfm}
 
 Type TLockData = record
       nick:array[1..255] of Char;

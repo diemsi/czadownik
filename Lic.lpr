@@ -1,11 +1,13 @@
 program Lic;
 
-uses
-  Forms,
-  wnd_LIC in 'wnd_LIC.pas' {Form1},
-  mycrc in '..\kci\mycrc.pas';
+{$MODE Delphi}
 
-{$R *.RES}
+uses
+  Forms, Interfaces,
+  wnd_LIC in 'wnd_LIC.pas' {Form1},
+  mycrc in 'mycrc.pas';
+
+{$R *.res}
 
 begin
   Application.Initialize;
