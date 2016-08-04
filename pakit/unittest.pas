@@ -1,10 +1,12 @@
 unit unittest;
 
+{$MODE Delphi}
+
 interface
 
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  Pak, StdCtrls, ExtCtrls, RxGif;
+  Pak, StdCtrls, ExtCtrls{, RxGif};
 
 type
   TForm1 = class(TForm)
@@ -22,7 +24,7 @@ var
 
 implementation
 
-{$R *.DFM}
+{$R *.lfm}
 
 procedure TForm1.Button1Click(Sender: TObject);
 var Pak:TcymPAK;
@@ -52,7 +54,10 @@ begin
      MS.Position := 0;
      x := tgifimage.Create;
      x.LoadFromStream(MS);
-     x.Frames[0].Draw(canvas, rect(1,1,x.Width, x.Height),true);
+     //TODO: Wlasnosc Frames nalezala do TGIFImage; Poprawic ze wzgledu na Lazarusa
+     //TODO: http://lazarus-ccr.sourceforge.net/docs/lcl/graphics/tfpimagebitmap.html
+
+     //x.Frames[0].Draw(canvas, rect(1,1,x.Width, x.Height),true);
      x.Free;
      MS.Free;
 

@@ -1,11 +1,13 @@
 program projtest;
 
+{$MODE Delphi}
+
 uses
-  Forms,
+  Interfaces, Forms,
   unittest in 'unittest.pas' {Form1},
   Pak in 'pak.pas';
 
-{$R *.RES}
+{$R *.res}
 
 begin
   Application.Initialize;

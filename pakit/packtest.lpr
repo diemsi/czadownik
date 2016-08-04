@@ -1,7 +1,9 @@
 program PackTest;
 
+{$MODE Delphi}
+
 uses
-  Forms,
+  Forms, Interfaces,
   main in 'main.pas' {frmPakMaster},
   PakHeader in 'PakHeader.pas',
   PakGlobals in 'PakGlobals.pas',
@@ -10,7 +12,7 @@ uses
   Pak in 'Pak.pas',
   SetHeader in 'SetHeader.pas' {frmPakheader};
 
-{$R *.RES}
+{$R *.res}
 
 begin
   Application.Initialize;

@@ -9,6 +9,8 @@ Version:   0.1
 ********************************************************************************)
 unit main;
 
+{$MODE Delphi}
+
 interface
 
 uses
@@ -62,7 +64,7 @@ implementation
 
 uses SetHeader;
 
-{$R *.DFM}
+{$R *.lfm}
 
 procedure TfrmPakMaster.btnCreateClick(Sender: TObject);
 var

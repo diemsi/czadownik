@@ -9,6 +9,8 @@ Version:   0.1
 ********************************************************************************)
 unit PakDirectory;
 
+{$MODE Delphi}
+
 interface
 
 uses
