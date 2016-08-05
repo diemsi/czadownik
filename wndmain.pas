@@ -129,10 +129,6 @@ type
     btnUsunWszystkieLinki: TSpeedButton;
     btnUsunLink: TSpeedButton;
     btnSortujLinki: TSpeedButton;
-    KolorowyNapis1: TPanel;
-    Label30: TLabel;
-    KolorowyNapis2: TPanel;
-    Label31: TLabel;
     Label32: TLabel;
     KolorowyNapis3: TPanel;
     NaGorze: TTopMost;
@@ -651,7 +647,7 @@ begin
      Zakladki.ActivePage := zCzat;
      chkAntyFloodAktywnyClick(nil);
      Stos := TStack.Create;
-     Zakladki.OwnerDraw := True;
+//     Zakladki.OwnerDraw := True;
      CoTeraz := ctNic;
      edtCzestotliwoscAntyIDLEChange(nil);
 
@@ -825,6 +821,8 @@ begin
 
      //to gowno na koncu bo cos sie sypie
      IleObrazkow := 0;
+
+     
      btnObrazki.Visible := chkObrazki.Checked;
      if chkObrazki.Checked then
      begin
@@ -1072,8 +1070,8 @@ end;
 procedure TwndCzat.ZakladkiDrawTab(Control: TCustomTabControl;
   TabIndex: Integer; const Rect: TRect; Active: Boolean);
 begin
-     with (Control as TPageControl)
-          do Canvas.TextOut(6+rect.Left, 3+rect.top, Pages[TabIndex].Caption);
+//     with (Control as TPageControl)
+//          do Canvas.TextOut(6+rect.Left, 3+rect.top, Pages[TabIndex].Caption);
 end;
 
 procedure TwndCzat.OdczytZaleglegoBuforaTimer(Sender: TObject);

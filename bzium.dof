@@ -90,8 +90,8 @@ MaxStackSize=1048576
 ImageBase=4194304
 ExeDescription=
 [Directories]
-OutputDir=
-UnitOutputDir=
+OutputDir=bin
+UnitOutputDir=bin-temp
 PackageDLLOutputDir=
 PackageDCPOutputDir=
 SearchPath=pakit;CoolTrayIcon;ics\Delphi\VC32;RXLib275\Units
@@ -149,3 +149,9 @@ Item9=F:\Program Files\COMPON\RX\Units;F:\Program Files\COMPON\cooltray;D:\d5\cz
 Item10=F:\Program Files\COMPON\RX\Units;F:\Program Files\COMPON\cooltray;D:\d5\czat\pakit;F:\Program Files\COMPON\ICS\DELPHI\VC32;F:\Program Files\COMPON;F:\Program Files\COMPON\SHAPES;F:\Program Files\COMPON\COOL!!
 Item11=F:\Program Files\COMPON\RX\Units;F:\Program Files\COMPON\cooltray;D:\d5\czat\pakit;F:\Program Files\COMPON\ICS\DELPHI\VC32;F:\Program Files\COMPON;F:\Program Files\COMPON\SHAPES
 Item12=F:\Program Files\COMPON\RX\Units;F:\Program Files\COMPON\cooltray;D:\d5\czat\pakit;F:\Program Files\COMPON\ICS\DELPHI\VC32;F:\Program Files\COMPON
+[HistoryLists\hlUnitOutputDirectory]
+Count=1
+Item0=bin-temp
+[HistoryLists\hlOutputDirectorry]
+Count=1
+Item0=bin

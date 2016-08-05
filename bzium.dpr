@@ -10,7 +10,6 @@ uses
   stale in 'stale.pas',
   stuff in 'stuff.pas',
   Pak in 'pakit\pak.pas',
-  wnd_Splash in 'wnd_Splash.pas' {wndSplash},
   pokoje in 'pokoje.pas' {wndPokoje},
   nl_elem in 'nl_elem.pas',
   ip_parser in 'ip_parser.pas',
@@ -71,9 +70,6 @@ begin
      Application.CreateForm(TwndCzat, wndCzat);
   Application.CreateForm(TwndPokoje, wndPokoje);
   Application.CreateForm(TwndObrazki, wndObrazki);
-  wndSplash := TwndSplash.Create(Application);
-     wndSplash.Show;
-     wndSplash.Refresh;
      Application.Run;
 
 

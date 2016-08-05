@@ -211,7 +211,6 @@ object wndCzat: TwndCzat
     MultiLine = True
     TabOrder = 0
     OnChange = ZakladkiChange
-    OnDrawTab = ZakladkiDrawTab
     object zCzat: TTabSheet
       Caption = 'Czat'
       OnShow = zCzatShow
@@ -883,7 +882,7 @@ object wndCzat: TwndCzat
         Top = 34
         Width = 485
         Height = 277
-        PageIndex = 6
+        PageIndex = 4
         TabOrder = 1
         object TPage
           Left = 0
@@ -1275,20 +1274,6 @@ object wndCzat: TwndCzat
             Font.Style = []
             ParentFont = False
           end
-          object Label30: TLabel
-            Left = 4
-            Top = 244
-            Width = 68
-            Height = 13
-            Caption = 'Nasz adres:'
-          end
-          object Label31: TLabel
-            Left = 6
-            Top = 260
-            Width = 113
-            Height = 13
-            Caption = 'Kontakt z redakcj'#261':'
-          end
           object Label32: TLabel
             Left = 210
             Top = 260
@@ -1296,13 +1281,13 @@ object wndCzat: TwndCzat
             Height = 13
             Caption = 'Kontakt z autorem:'
           end
-          object KolorowyNapis1: TPanel
-            Left = 74
-            Top = 244
-            Width = 157
+          object KolorowyNapis3: TPanel
+            Left = 324
+            Top = 260
+            Width = 70
             Height = 13
             Cursor = crHandPoint
-            Caption = 'http://www.kutno.vel.pl'
+            Caption = 'dmc@o2.pl'
             Font.Charset = EASTEUROPE_CHARSET
             Font.Color = clWindowText
             Font.Height = -11
@@ -1310,38 +1295,6 @@ object wndCzat: TwndCzat
             Font.Style = [fsBold]
             ParentFont = False
             TabOrder = 0
-            OnClick = KolorowyNapis1Click
-          end
-          object KolorowyNapis2: TPanel
-            Left = 122
-            Top = 260
-            Width = 82
-            Height = 13
-            Cursor = crHandPoint
-            Caption = 'kutno@wp.pl'
-            Font.Charset = EASTEUROPE_CHARSET
-            Font.Color = clWindowText
-            Font.Height = -11
-            Font.Name = 'Verdana'
-            Font.Style = [fsBold]
-            ParentFont = False
-            TabOrder = 1
-            OnClick = KolorowyNapis2Click
-          end
-          object KolorowyNapis3: TPanel
-            Left = 324
-            Top = 260
-            Width = 70
-            Height = 13
-            Cursor = crHandPoint
-            Caption = 'dmc@op.pl'
-            Font.Charset = EASTEUROPE_CHARSET
-            Font.Color = clWindowText
-            Font.Height = -11
-            Font.Name = 'Verdana'
-            Font.Style = [fsBold]
-            ParentFont = False
-            TabOrder = 2
             OnClick = KolorowyNapis3Click
           end
         end
@@ -1502,7 +1455,7 @@ object wndCzat: TwndCzat
               Left = 208
               Top = 14
               Width = 70
-              Height = 22
+              Height = 21
               Alignment = taCenter
               Decimal = 0
               MaxValue = 20.000000000000000000
@@ -3192,6 +3145,9 @@ object wndCzat: TwndCzat
     object TabSheet1: TTabSheet
       Caption = 'RIPE - Whois'
       ImageIndex = 3
+      DesignSize = (
+        686
+        425)
       object Label56: TLabel
         Left = 8
         Top = 10
@@ -3227,8 +3183,9 @@ object wndCzat: TwndCzat
       object WhoIsMemo: TMemo
         Left = 4
         Top = 30
-        Width = 551
-        Height = 253
+        Width = 677
+        Height = 387
+        Anchors = [akLeft, akTop, akRight, akBottom]
         Color = clBlack
         Font.Charset = EASTEUROPE_CHARSET
         Font.Color = clLime
