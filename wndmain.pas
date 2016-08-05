@@ -7,7 +7,7 @@ uses
   StdCtrls, Contnrs, ExtCtrls, Math, Buttons, ScktComp,
   ComCtrls, Stale, stuff, inifiles, mmsystem, ImgList,
   CoolTrayIcon, Menus, FtpCli, Gauges, clipbrd, RXCtrls, pak,
-  KolorNap, TopMost, WSocket, Tabs, Grids, Mask, ToolEdit, CurrEdit,
+  TopMostCtl, WSocket, Tabs, Grids, Mask, ToolEdit, CurrEdit,
   RXSpin, RxGIF, nl_elem, ip_parser;
 
 type TWordArray = array[1..1024] of Word;
@@ -129,12 +129,12 @@ type
     btnUsunWszystkieLinki: TSpeedButton;
     btnUsunLink: TSpeedButton;
     btnSortujLinki: TSpeedButton;
-    KolorowyNapis1: TKolorowyNapis;
+    KolorowyNapis1: TPanel;
     Label30: TLabel;
-    KolorowyNapis2: TKolorowyNapis;
+    KolorowyNapis2: TPanel;
     Label31: TLabel;
     Label32: TLabel;
-    KolorowyNapis3: TKolorowyNapis;
+    KolorowyNapis3: TPanel;
     NaGorze: TTopMost;
     chkOnTop: TCheckBox;
     Czybufor1: TMenuItem;
@@ -1952,7 +1952,7 @@ begin OdpalLinka('mailto:kutno@wp.pl'); end;
 procedure TwndCzat.KolorowyNapis3Click(Sender: TObject);
 begin OdpalLinka('mailto:dmc@op.pl'); end;
 procedure TwndCzat.chkOnTopClick(Sender: TObject);
-begin NaGorze.TopMost := chkOnTop.Checked; end;
+begin NaGorze.OnTop := chkOnTop.Checked; end;
 procedure TwndCzat.btnUsunWszystkieLinkiClick(Sender: TObject);
 begin lbLinki.Items.Clear; end;
 procedure TwndCzat.lbLinkiKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);

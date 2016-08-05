@@ -1,0 +1,218 @@
+# ---------------------------------------------------------------------------
+#  Delphi VCL Extensions (RX)
+#  Copyright (c) 1999 Master-Bank
+# ---------------------------------------------------------------------------
+#  Patched by Polaris Software
+# ---------------------------------------------------------------------------
+!if !$d(BCB)
+BCB = $(MAKEDIR)\..
+!endif
+
+# ---------------------------------------------------------------------------
+# IDE SECTION
+# ---------------------------------------------------------------------------
+# The following section of the project makefile is managed by the BCB IDE.
+# It is recommended to use the IDE to change any of the values in this
+# section.
+# ---------------------------------------------------------------------------
+
+VERSION = BCB.04.04
+# ---------------------------------------------------------------------------
+PROJECT = rxctl4.bpl
+OBJFILES = ..\dcu\c4\Rxctrls.obj ..\dcu\c4\Rxgrids.obj ..\dcu\c4\Curredit.obj \
+  ..\dcu\c4\Tooledit.obj ..\dcu\c4\Dateutil.obj ..\dcu\c4\Rxsplit.obj \
+  ..\dcu\c4\Rxslider.obj ..\dcu\c4\Rxclock.obj ..\dcu\c4\Animate.obj \
+  ..\dcu\c4\Rxspin.obj ..\dcu\c4\RxRichEd.obj ..\dcu\c4\Rxswitch.obj \
+  ..\dcu\c4\Rxdice.obj ..\dcu\c4\ClipMon.obj ..\dcu\c4\Vclutils.obj \
+  ..\dcu\c4\Anifile.obj ..\dcu\c4\Icolist.obj ..\dcu\c4\Objstr.obj \
+  ..\dcu\c4\Rxcombos.obj ..\dcu\c4\Pickdate.obj ..\dcu\c4\Maxmin.obj \
+  ..\dcu\c4\Rxconst.obj ..\dcu\c4\Rxcconst.obj ..\dcu\c4\Apputils.obj \
+  ..\dcu\c4\Strutils.obj ..\dcu\c4\Fileutil.obj ..\dcu\c4\Rxtimer.obj \
+  ..\dcu\c4\Rxhook.obj ..\dcu\c4\Placemnt.obj ..\dcu\c4\Rxprops.obj \
+  ..\dcu\c4\Rxprgrss.obj ..\dcu\c4\Rxhints.obj ..\dcu\c4\Rxcalc.obj \
+  ..\dcu\c4\Boxprocs.obj ..\dcu\c4\Clipicon.obj ..\dcu\c4\Rxgraph.obj \
+  ..\dcu\c4\PicClip.obj ..\dcu\c4\DualList.obj ..\dcu\c4\FDualLst.obj \
+  ..\dcu\c4\ClipView.obj ..\dcu\c4\Speedbar.obj ..\dcu\c4\SbSetup.obj \
+  ..\dcu\c4\PageMngr.obj ..\dcu\c4\MrgMngr.obj ..\dcu\c4\StrHlder.obj \
+  ..\dcu\c4\AppEvent.obj ..\dcu\c4\TimerLst.obj ..\dcu\c4\MRUList.obj \
+  ..\dcu\c4\RxIni.obj ..\dcu\c4\RxShell.obj ..\dcu\c4\Parsing.obj \
+  ..\dcu\c4\RxMenus.obj ..\dcu\c4\RxNotify.obj ..\dcu\c4\RxGrdCpt.obj \
+  ..\dcu\c4\SplshWnd.obj ..\dcu\c4\DataConv.obj ..\dcu\c4\RxTConst.obj \
+  ..\dcu\c4\Ole2Auto.obj ..\dcu\c4\RxVerInf.obj ..\dcu\c4\ExcptDlg.obj \
+  ..\dcu\c4\Str16.obj ..\dcu\c4\Rxgconst.obj ..\dcu\c4\Rxgif.obj \
+  ..\dcu\c4\Gifctrl.obj ..\dcu\c4\rrxcombo.obj ..\dcu\c4\rxctl4.obj
+RESFILES =
+DEFFILE =
+RESDEPEN = $(RESFILES)
+LIBFILES =
+IDLGENFILES =
+IDLFILES =
+LIBRARIES =
+SPARELIBS = vcl40.lib vclx40.lib
+PACKAGES = vcl40.bpi vclx40.bpi
+# ---------------------------------------------------------------------------
+PATHCPP = .;
+PATHASM = .;
+PATHPAS = .;old
+PATHRC = .;
+DEBUGLIBPATH = $(BCB)\lib\debug
+RELEASELIBPATH = $(BCB)\lib\release
+SYSDEFINES = NO_STRICT;_RTLDLL;USEPACKAGES
+USERDEFINES =
+# ---------------------------------------------------------------------------
+CFLAG1 = -Iold;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\rx\units -O2 -Hc \
+  -H=$(BCB)\lib\vcl40.csm -w- -Ve -Tkh30000 -a8 -k- -vi \
+  -D$(SYSDEFINES);$(USERDEFINES) -c -b- -w-par -w-inl -Vx
+CFLAG2 =
+CFLAG3 =
+IDLCFLAGS = -Iold -I$(BCB)\include -I$(BCB)\include\vcl -I$(BCB)\rx\units -src_suffixcpp
+PFLAGS = -Uold;$(BCB)\lib\release;$(BCB)\lib\obj;$(BCB)\lib;$(BCB)\rx\units;$(RELEASELIBPATH) \
+  -Iold;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\rx\units -N2..\dcu\c4 \
+  -N0..\dcu\c4 -$YD -$V- -$L- -$D- -v -M -JPHNE
+RFLAGS = -iold;$(BCB)\include;$(BCB)\include\vcl;$(BCB)\rx\units
+AFLAGS = /i$(BCB)\include /i$(BCB)\include\vcl /i$(BCB)\rx\units /mx /w2 /zn /d_RTLDLL \
+  /dUSEPACKAGES
+LFLAGS = -Lold;$(BCB)\lib\release;$(BCB)\lib\obj;$(BCB)\lib;$(BCB)\rx\units;$(RELEASELIBPATH) \
+  -D"RX Library Controls and Tools Package" -aa -Tpp -Gpr -x -Gn -Gl -Gi
+IFLAGS =
+# ---------------------------------------------------------------------------
+ALLOBJ = c0pkg32.obj Memmgr.Lib $(PACKAGES) sysinit.obj $(OBJFILES)
+ALLRES = $(RESFILES)
+ALLLIB = $(LIBFILES) $(LIBRARIES) import32.lib cp32mti.lib
+# ---------------------------------------------------------------------------
+!ifdef IDEOPTIONS
+
+[Version Info]
+IncludeVerInfo=0
+AutoIncBuild=0
+MajorVer=1
+MinorVer=0
+Release=0
+Build=0
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=1049
+CodePage=1251
+
+[Excluded Packages]
+E:\Comp\Indy\C4\dclIndy40.BPL=Internet Direct "Indy" for D4 Property and Component Editors
+e:\comp\Bpl\PolarisDT4.bpl=Polaris Components
+
+[HistoryLists\hlIncludePath]
+Count=1
+Item0=$(BCB)\include;$(BCB)\include\vcl;$(BCB)\rx\units
+
+[HistoryLists\hlLibraryPath]
+Count=1
+Item0=$(BCB)\lib\release;$(BCB)\lib\obj;$(BCB)\lib;$(BCB)\rx\units
+
+[HistoryLists\hlDebugSourcePath]
+Count=1
+Item0=$(BCB)\source\vcl
+
+[HistoryLists\hlIntOutputDir]
+Count=1
+Item0=..\dcu\c4
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteDebug=0
+
+[Compiler]
+InMemoryExe=0
+ShowInfoMsgs=0
+
+[CORBA]
+AddServerUnit=1
+AddClientUnit=1
+PrecompiledHeaders=1
+
+!endif
+
+# ---------------------------------------------------------------------------
+# MAKE SECTION
+# ---------------------------------------------------------------------------
+# This section of the project file is not used by the BCB IDE.  It is for
+# the benefit of building from the command-line using the MAKE utility.
+# ---------------------------------------------------------------------------
+
+.autodepend
+# ---------------------------------------------------------------------------
+!if !$d(BCC32)
+BCC32 = bcc32
+!endif
+
+!if !$d(DCC32)
+DCC32 = dcc32
+!endif
+
+!if !$d(TASM32)
+TASM32 = tasm32
+!endif
+
+!if !$d(LINKER)
+LINKER = ilink32
+!endif
+
+!if !$d(BRCC32)
+BRCC32 = brcc32
+!endif
+
+!if !$d(IDL2CPP)
+IDL2CPP = idl2cpp
+!endif
+# ---------------------------------------------------------------------------
+!if $d(PATHCPP)
+.PATH.CPP = $(PATHCPP)
+.PATH.C   = $(PATHCPP)
+!endif
+
+!if $d(PATHPAS)
+.PATH.PAS = $(PATHPAS)
+!endif
+
+!if $d(PATHASM)
+.PATH.ASM = $(PATHASM)
+!endif
+
+!if $d(PATHRC)
+.PATH.RC  = $(PATHRC)
+!endif
+# ---------------------------------------------------------------------------
+$(PROJECT): $(IDLGENFILES) $(OBJFILES) $(RESDEPEN) $(DEFFILE)
+    $(BCB)\BIN\$(LINKER) @&&!
+    $(LFLAGS) +
+    $(ALLOBJ), +
+    $(PROJECT),, +
+    $(ALLLIB), +
+    $(DEFFILE), +
+    $(ALLRES)
+!
+# ---------------------------------------------------------------------------
+.pas.hpp:
+    $(BCB)\BIN\$(DCC32) $(PFLAGS) {$< }
+
+.pas.obj:
+    $(BCB)\BIN\$(DCC32) $(PFLAGS) {$< }
+
+.cpp.obj:
+    $(BCB)\BIN\$(BCC32) $(CFLAG1) $(CFLAG2) $(CFLAG3) -n$(@D) {$< }
+
+.c.obj:
+    $(BCB)\BIN\$(BCC32) $(CFLAG1) $(CFLAG2) $(CFLAG3) -n$(@D) {$< }
+
+.asm.obj:
+    $(BCB)\BIN\$(TASM32) $(AFLAGS) $<, $@
+
+.rc.res:
+    $(BCB)\BIN\$(BRCC32) $(RFLAGS) -fo$@ $<
+# ---------------------------------------------------------------------------

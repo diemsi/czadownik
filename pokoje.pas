@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  StdCtrls, ComCtrls, OleCtrls, SHDocVw, ExtCtrls, Stuff;
+  StdCtrls, ComCtrls, OleCtrls, ExtCtrls, Stuff, SHDocVw_TLB;
 
 type
   TwndPokoje = class(TForm)

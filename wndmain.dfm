@@ -1,8 +1,8 @@
 object wndCzat: TwndCzat
-  Left = 191
-  Top = 225
-  Width = 707
-  Height = 390
+  Left = 419
+  Top = 270
+  Width = 710
+  Height = 511
   Caption = 'KCI Czadownik v%s'
   Color = 13356755
   Constraints.MinHeight = 190
@@ -204,9 +204,9 @@ object wndCzat: TwndCzat
   object Zakladki: TPageControl
     Left = 0
     Top = 0
-    Width = 699
-    Height = 344
-    ActivePage = TabSheet1
+    Width = 694
+    Height = 453
+    ActivePage = zCzat
     Align = alClient
     MultiLine = True
     TabOrder = 0
@@ -434,13 +434,16 @@ object wndCzat: TwndCzat
       end
       object Panel3: TPanel
         Left = 0
-        Top = 268
-        Width = 691
+        Top = 377
+        Width = 686
         Height = 48
         Align = alBottom
         BevelOuter = bvNone
         ParentColor = True
         TabOrder = 0
+        DesignSize = (
+          686
+          48)
         object btnBold: TSpeedButton
           Tag = 1
           Left = 4
@@ -550,7 +553,7 @@ object wndCzat: TwndCzat
           OnClick = btnObrazkiClick
         end
         object SpeedButton1: TSpeedButton
-          Left = 650
+          Left = 649
           Top = 24
           Width = 35
           Height = 22
@@ -566,7 +569,7 @@ object wndCzat: TwndCzat
           OnClick = SpeedButton1Click
         end
         object btnPOkoje: TSpeedButton
-          Left = 592
+          Left = 591
           Top = 24
           Width = 57
           Height = 22
@@ -588,7 +591,6 @@ object wndCzat: TwndCzat
           Top = 24
           Width = 175
           Height = 22
-          TabStop = False
           Style = csOwnerDrawFixed
           Color = clWhite
           DropDownCount = 15
@@ -600,6 +602,7 @@ object wndCzat: TwndCzat
           ItemHeight = 16
           ParentFont = False
           TabOrder = 0
+          TabStop = False
           OnChange = lbKoloryChange
           OnDrawItem = lbKoloryDrawItem
           Items.Strings = (
@@ -608,24 +611,24 @@ object wndCzat: TwndCzat
             '<zielony>'
             '<czerwony>'
             '<fioletowy>'
-            '<pomarañczowy>'
-            '<br¹zowy>'
+            '<pomara'#324'czowy>'
+            '<br'#261'zowy>'
             '<szary>'
-            '<ró¿owy>'
-            '<b³êkitny>'
+            '<r'#243#380'owy>'
+            '<b'#322#281'kitny>'
             '<turkusowy>'
-            '<¿ó³ty>'
+            '<'#380#243#322'ty>'
             '<kasztanowy>'
             '<granatowy>'
             '<purpurowy>'
             '<oliwkowy>'
             '<zielonomodry>'
-            '<w³asny>')
+            '<w'#322'asny>')
         end
         object edtTekst: TEdit
           Left = 0
           Top = 2
-          Width = 687
+          Width = 690
           Height = 21
           Anchors = [akLeft, akRight]
           AutoSelect = False
@@ -635,17 +638,20 @@ object wndCzat: TwndCzat
         end
       end
       object Panel4: TPanel
-        Left = 538
+        Left = 533
         Top = 0
         Width = 153
-        Height = 268
+        Height = 377
         Align = alRight
         BevelOuter = bvNone
         ParentColor = True
         TabOrder = 1
+        DesignSize = (
+          153
+          377)
         object btnPriv: TPaintBox
           Left = 7
-          Top = 235
+          Top = 342
           Width = 34
           Height = 32
           Anchors = [akRight, akBottom]
@@ -656,7 +662,7 @@ object wndCzat: TwndCzat
         end
         object btnKoloOki: TPaintBox
           Left = 43
-          Top = 235
+          Top = 342
           Width = 34
           Height = 32
           Anchors = [akRight, akBottom]
@@ -667,7 +673,7 @@ object wndCzat: TwndCzat
         end
         object btnKoloIgnore: TPaintBox
           Left = 79
-          Top = 235
+          Top = 342
           Width = 34
           Height = 32
           Anchors = [akRight, akBottom]
@@ -678,7 +684,7 @@ object wndCzat: TwndCzat
         end
         object btnInfo: TPaintBox
           Left = 115
-          Top = 235
+          Top = 342
           Width = 34
           Height = 32
           Anchors = [akRight, akBottom]
@@ -694,7 +700,7 @@ object wndCzat: TwndCzat
           Height = 17
           Alignment = taCenter
           AutoSize = False
-          Caption = 'Czatowiczów: 0'
+          Caption = 'Czatowicz'#243'w: 0'
           Font.Charset = EASTEUROPE_CHARSET
           Font.Color = clNavy
           Font.Height = -12
@@ -715,13 +721,13 @@ object wndCzat: TwndCzat
           Left = 4
           Top = 52
           Width = 147
-          Height = 180
+          Height = 286
+          Style = lbOwnerDrawFixed
           Anchors = [akLeft, akTop, akBottom]
           Color = clWhite
           ItemHeight = 16
           PopupMenu = ListaUserowPopupMenu
           Sorted = True
-          Style = lbOwnerDrawFixed
           TabOrder = 1
           OnDblClick = ListaUserowDblClick
           OnDrawItem = ListaUserowDrawItem
@@ -748,8 +754,8 @@ object wndCzat: TwndCzat
       object Panel5: TPanel
         Left = 0
         Top = 0
-        Width = 538
-        Height = 268
+        Width = 533
+        Height = 377
         Align = alClient
         BevelOuter = bvNone
         Color = clWhite
@@ -758,18 +764,18 @@ object wndCzat: TwndCzat
         object PanelDoRysowania: TPaintBox
           Left = 0
           Top = 0
-          Width = 522
-          Height = 251
+          Width = 517
+          Height = 360
           Align = alClient
           PopupMenu = CzatPopupMenu
           OnMouseDown = PanelDoRysowaniaMouseDown
           OnPaint = PanelDoRysowaniaPaint
         end
         object sb: TScrollBar
-          Left = 522
+          Left = 517
           Top = 0
           Width = 16
-          Height = 251
+          Height = 360
           Align = alRight
           Kind = sbVertical
           Max = 1
@@ -781,11 +787,11 @@ object wndCzat: TwndCzat
         end
         object ZakladkaOkienek: TTabSet
           Left = 0
-          Top = 251
-          Width = 538
+          Top = 360
+          Width = 533
           Height = 17
           Align = alBottom
-          BackgroundColor = 12639424
+          BackgroundColor = clMoneyGreen
           DitherBackground = False
           Font.Charset = ANSI_CHARSET
           Font.Color = clWhite
@@ -877,12 +883,12 @@ object wndCzat: TwndCzat
         Top = 34
         Width = 485
         Height = 277
-        PageIndex = 4
+        PageIndex = 6
         TabOrder = 1
         object TPage
           Left = 0
           Top = 0
-          Caption = 'U¿ytkownik'
+          Caption = 'U'#380'ytkownik'
           object Label2: TLabel
             Left = 5
             Top = 4
@@ -895,14 +901,14 @@ object wndCzat: TwndCzat
             Top = 42
             Width = 36
             Height = 13
-            Caption = 'Has³o:'
+            Caption = 'Has'#322'o:'
           end
           object Label4: TLabel
             Left = 5
             Top = 80
             Width = 37
             Height = 13
-            Caption = 'Pokój:'
+            Caption = 'Pok'#243'j:'
           end
           object Label15: TLabel
             Left = 4
@@ -911,9 +917,9 @@ object wndCzat: TwndCzat
             Height = 43
             AutoSize = False
             Caption = 
-              'Has³o jest zapisywane w rejestrze systemu Windows w sposób jawny' +
-              '.'#13#10'Autor konsoli (ja) nie zamieœci³ ¯ADNYCH procedur maj¹cych na' +
-              ' celu nielegalnie i nieuczciwe pozyskiwanie hase³ czatowiczów.'
+              'Has'#322'o jest zapisywane w rejestrze systemu Windows w spos'#243'b jawny' +
+              '.'#13#10'Autor konsoli (ja) nie zamie'#347'ci'#322' '#379'ADNYCH procedur maj'#261'cych na' +
+              ' celu nielegalnie i nieuczciwe pozyskiwanie hase'#322' czatowicz'#243'w.'
             WordWrap = True
           end
           object edtNick: TEdit
@@ -966,7 +972,7 @@ object wndCzat: TwndCzat
             Top = 126
             Width = 115
             Height = 37
-            Caption = 'Po³¹cz'
+            Caption = 'Po'#322#261'cz'
             Default = True
             Font.Charset = EASTEUROPE_CHARSET
             Font.Color = clWindowText
@@ -981,7 +987,7 @@ object wndCzat: TwndCzat
         object TPage
           Left = 0
           Top = 0
-          Caption = 'Po³¹czenie'
+          Caption = 'Po'#322#261'czenie'
           object Label9: TLabel
             Left = 3
             Top = 146
@@ -1024,8 +1030,8 @@ object wndCzat: TwndCzat
             Height = 26
             Alignment = taCenter
             Caption = 
-              'Uwaga!!! Jakichkolwiek zmian mo¿na dokonywaæ jedynie wtedy, gdy ' +
-              'NIE MA pol¹czebnia z czatem '
+              'Uwaga!!! Jakichkolwiek zmian mo'#380'na dokonywa'#263' jedynie wtedy, gdy ' +
+              'NIE MA pol'#261'czebnia z czatem '
             Font.Charset = EASTEUROPE_CHARSET
             Font.Color = clRed
             Font.Height = -11
@@ -1127,7 +1133,7 @@ object wndCzat: TwndCzat
           object Label10: TLabel
             Left = 6
             Top = 106
-            Width = 36
+            Width = 35
             Height = 13
             Caption = 'Tekst:'
           end
@@ -1152,12 +1158,12 @@ object wndCzat: TwndCzat
             Height = 83
             AutoSize = False
             Caption = 
-              'AntyIdle to funkcja '#39'udaj¹ca'#39' aktywnoœæ czatowicza. Polega na ty' +
-              'm, ¿e co piewien okres czasu, program automatycznie wysy³a do se' +
-              'rwera zadany tekst, przez co serwer nie wyrzuca czatowiczów za b' +
-              'ezczynnoœæ.'#13#10'W okienku [Tekst] mo¿na wpisaæ dowony tekst, np. kr' +
-              'opke. Zalecany jest ukoœnik /, poniewa¿ nie powoduje wyœwietleni' +
-              'a ¿adnego tekstu w oknach innych czatowiczów, a tak¿e w tej kons' +
+              'AntyIdle to funkcja '#39'udaj'#261'ca'#39' aktywno'#347#263' czatowicza. Polega na ty' +
+              'm, '#380'e co piewien okres czasu, program automatycznie wysy'#322'a do se' +
+              'rwera zadany tekst, przez co serwer nie wyrzuca czatowicz'#243'w za b' +
+              'ezczynno'#347#263'.'#13#10'W okienku [Tekst] mo'#380'na wpisa'#263' dowony tekst, np. kr' +
+              'opke. Zalecany jest uko'#347'nik /, poniewa'#380' nie powoduje wy'#347'wietleni' +
+              'a '#380'adnego tekstu w oknach innych czatowicz'#243'w, a tak'#380'e w tej kons' +
               'oli.'
             WordWrap = True
           end
@@ -1175,9 +1181,9 @@ object wndCzat: TwndCzat
             Top = 128
             Width = 71
             Height = 21
-            MaxValue = 5000
-            MinValue = 1
-            Value = 600
+            MaxValue = 5000.000000000000000000
+            MinValue = 1.000000000000000000
+            Value = 600.000000000000000000
             Color = clWhite
             TabOrder = 1
             OnChange = edtCzestotliwoscAntyIDLEChange
@@ -1204,7 +1210,7 @@ object wndCzat: TwndCzat
             Height = 29
             AutoSize = False
             Caption = 
-              'Te linie bêd¹ wysy³ane co 750ms na czata, celem zapobiegania ewe' +
+              'Te linie b'#281'd'#261' wysy'#322'ane co 750ms na czata, celem zapobiegania ewe' +
               'ntualnemu floodowi (thx to LordTom ;)'
             WordWrap = True
           end
@@ -1237,7 +1243,7 @@ object wndCzat: TwndCzat
             Top = 222
             Width = 281
             Height = 17
-            Caption = 'Usuwaj jednakowe linie nastêpuj¹ce po sobie'
+            Caption = 'Usuwaj jednakowe linie nast'#281'puj'#261'ce po sobie'
             TabOrder = 2
           end
         end
@@ -1253,9 +1259,9 @@ object wndCzat: TwndCzat
             Caption = 
               'Konsola Kutnowskiego Centrum Informacyjnego (KCI)'#13#10'Autor: dmc   ' +
               '         '#13#10'Wersja: %s'#13#10'-----------------------------------------' +
-              '------------------------------------------------------'#13#10'Podziêko' +
-              'wania:'#13#10'+ Futrega Marek (autor czata i ca³ego tego bagna) '#13#10'+ Ja' +
-              'niszewski Micha³ (Misieqj)'#13#10'+ Komur Maciek(VenonX)'#13#10'+ Kubala Ani' +
+              '------------------------------------------------------'#13#10'Podzi'#281'ko' +
+              'wania:'#13#10'+ Futrega Marek (autor czata i ca'#322'ego tego bagna) '#13#10'+ Ja' +
+              'niszewski Micha'#322' (Misieqj)'#13#10'+ Komur Maciek(VenonX)'#13#10'+ Kubala Ani' +
               'a (MalaQbalka)'#13#10'+ Michalak Kinga (kociszka)'#13#10'+ Pietrusiak Adam (' +
               'APie)'#13#10'+ Pszenny Tomek (LordTom)'#13#10'+ Wastowski Andrzej (CyberanT)' +
               ' - gfx!mastah'#13#10'-------------------------------------------------' +
@@ -1269,9 +1275,30 @@ object wndCzat: TwndCzat
             Font.Style = []
             ParentFont = False
           end
-          object KolorowyNapis1: TKolorowyNapis
+          object Label30: TLabel
+            Left = 4
+            Top = 244
+            Width = 68
+            Height = 13
+            Caption = 'Nasz adres:'
+          end
+          object Label31: TLabel
+            Left = 6
+            Top = 260
+            Width = 113
+            Height = 13
+            Caption = 'Kontakt z redakcj'#261':'
+          end
+          object Label32: TLabel
+            Left = 210
+            Top = 260
+            Width = 111
+            Height = 13
+            Caption = 'Kontakt z autorem:'
+          end
+          object KolorowyNapis1: TPanel
             Left = 74
-            Top = 248
+            Top = 244
             Width = 157
             Height = 13
             Cursor = crHandPoint
@@ -1282,19 +1309,10 @@ object wndCzat: TwndCzat
             Font.Name = 'Verdana'
             Font.Style = [fsBold]
             ParentFont = False
-            Transparent = True
+            TabOrder = 0
             OnClick = KolorowyNapis1Click
-            KolorKliknietego = clMaroon
-            Podswietlenie = clBlue
           end
-          object Label30: TLabel
-            Left = 4
-            Top = 248
-            Width = 68
-            Height = 13
-            Caption = 'Nasz adres:'
-          end
-          object KolorowyNapis2: TKolorowyNapis
+          object KolorowyNapis2: TPanel
             Left = 122
             Top = 260
             Width = 82
@@ -1307,26 +1325,10 @@ object wndCzat: TwndCzat
             Font.Name = 'Verdana'
             Font.Style = [fsBold]
             ParentFont = False
-            Transparent = True
+            TabOrder = 1
             OnClick = KolorowyNapis2Click
-            KolorKliknietego = clMaroon
-            Podswietlenie = clBlue
           end
-          object Label31: TLabel
-            Left = 6
-            Top = 260
-            Width = 113
-            Height = 13
-            Caption = 'Kontakt z redakcj¹:'
-          end
-          object Label32: TLabel
-            Left = 210
-            Top = 260
-            Width = 111
-            Height = 13
-            Caption = 'Kontakt z autorem:'
-          end
-          object KolorowyNapis3: TKolorowyNapis
+          object KolorowyNapis3: TPanel
             Left = 324
             Top = 260
             Width = 70
@@ -1339,10 +1341,8 @@ object wndCzat: TwndCzat
             Font.Name = 'Verdana'
             Font.Style = [fsBold]
             ParentFont = False
-            Transparent = True
+            TabOrder = 2
             OnClick = KolorowyNapis3Click
-            KolorKliknietego = clMaroon
-            Podswietlenie = clBlue
           end
         end
         object TPage
@@ -1354,7 +1354,7 @@ object wndCzat: TwndCzat
             Top = 6
             Width = 197
             Height = 13
-            Caption = 'Ustawienia pochodz¹ce z serwera:'
+            Caption = 'Ustawienia pochodz'#261'ce z serwera:'
           end
           object Ustawienia: TMemo
             Left = 4
@@ -1376,7 +1376,7 @@ object wndCzat: TwndCzat
         object TPage
           Left = 0
           Top = 0
-          Caption = 'Logowanie ³¹czenia'
+          Caption = 'Logowanie '#322#261'czenia'
           object Label16: TLabel
             Left = 4
             Top = 6
@@ -1403,7 +1403,7 @@ object wndCzat: TwndCzat
             Top = 18
             Width = 75
             Height = 25
-            Caption = 'Wyczyœæ'
+            Caption = 'Wyczy'#347#263
             TabOrder = 1
             OnClick = btnCzyscLogowanieLaczeniaClick
           end
@@ -1486,28 +1486,28 @@ object wndCzat: TwndCzat
           end
           object GroupBox5: TGroupBox
             Left = 4
-            Top = 202
+            Top = 200
             Width = 477
-            Height = 73
-            Caption = ' Opcje aktywne przy nastêpnym uruchomieniu '
+            Height = 75
+            Caption = ' Opcje aktywne przy nast'#281'pnym uruchomieniu '
             TabOrder = 10
             object Label28: TLabel
               Left = 6
-              Top = 22
+              Top = 18
               Width = 199
               Height = 13
-              Caption = 'Iloœæ kolumn w okienku obrazków:'
+              Caption = 'Ilo'#347#263' kolumn w okienku obrazk'#243'w:'
             end
             object edtIloscKolumn: TRxSpinEdit
               Left = 208
-              Top = 18
+              Top = 14
               Width = 70
-              Height = 21
+              Height = 22
               Alignment = taCenter
               Decimal = 0
-              MaxValue = 20
-              MinValue = 1
-              Value = 8
+              MaxValue = 20.000000000000000000
+              MinValue = 1.000000000000000000
+              Value = 8.000000000000000000
               Font.Charset = EASTEUROPE_CHARSET
               Font.Color = clWindowText
               Font.Height = -11
@@ -1521,7 +1521,7 @@ object wndCzat: TwndCzat
               Top = 36
               Width = 381
               Height = 17
-              Caption = 'Sprawdzaj aktualna wersjê programu po uruchomieniu'
+              Caption = 'Sprawdzaj aktualna wersj'#281' programu po uruchomieniu'
               TabOrder = 1
             end
             object chkObrazki: TCheckBox
@@ -1529,7 +1529,7 @@ object wndCzat: TwndCzat
               Top = 52
               Width = 433
               Height = 17
-              Caption = 'Wyœwietlaj i ³aduj do pamiêci obrazki (zmniejsza wydajnoœæ)'
+              Caption = 'Wy'#347'wietlaj i '#322'aduj do pami'#281'ci obrazki (zmniejsza wydajno'#347#263')'
               Checked = True
               Font.Charset = EASTEUROPE_CHARSET
               Font.Color = clWindowText
@@ -1565,7 +1565,7 @@ object wndCzat: TwndCzat
             Top = 94
             Width = 205
             Height = 17
-            Caption = 'Dodawaj linki z okna g³ównego'
+            Caption = 'Dodawaj linki z okna g'#322#243'wnego'
             Checked = True
             State = cbChecked
             TabOrder = 5
@@ -1577,7 +1577,7 @@ object wndCzat: TwndCzat
             Width = 117
             Height = 17
             Alignment = taLeftJustify
-            Caption = 'Zawsze na górze'
+            Caption = 'Zawsze na g'#243'rze'
             TabOrder = 7
             OnClick = chkOnTopClick
           end
@@ -1587,7 +1587,7 @@ object wndCzat: TwndCzat
             Width = 165
             Height = 17
             Alignment = taLeftJustify
-            Caption = 'Po³¹cz przy uruchomieniu'
+            Caption = 'Po'#322#261'cz przy uruchomieniu'
             TabOrder = 8
           end
           object chkAutoDNS: TCheckBox
@@ -1603,13 +1603,13 @@ object wndCzat: TwndCzat
         object TPage
           Left = 0
           Top = 0
-          Caption = 'Znajomi/s³owa kluczowe'
+          Caption = 'Znajomi/s'#322'owa kluczowe'
           object Label19: TLabel
             Left = 2
             Top = 4
             Width = 100
             Height = 13
-            Caption = 'Lista znajomków:'
+            Caption = 'Lista znajomk'#243'w:'
           end
           object Label20: TLabel
             Left = 4
@@ -1623,14 +1623,14 @@ object wndCzat: TwndCzat
             Top = 4
             Width = 95
             Height = 13
-            Caption = 'S³owa kluczowe:'
+            Caption = 'S'#322'owa kluczowe:'
           end
           object Label36: TLabel
             Left = 260
             Top = 140
             Width = 39
             Height = 13
-            Caption = 'S³owo:'
+            Caption = 'S'#322'owo:'
           end
           object lbZnajomi: TListBox
             Left = 4
@@ -1666,7 +1666,7 @@ object wndCzat: TwndCzat
             Top = 248
             Width = 65
             Height = 22
-            Caption = 'Usuñ'
+            Caption = 'Usu'#324
             TabOrder = 3
             OnClick = btnUsunZnajomkaClick
             Glyph.Data = {
@@ -1684,7 +1684,7 @@ object wndCzat: TwndCzat
             Top = 248
             Width = 65
             Height = 22
-            Caption = 'Zmieñ'
+            Caption = 'Zmie'#324
             TabOrder = 4
             OnClick = btnZmienZnajomkaClick
             Glyph.Data = {
@@ -1738,7 +1738,7 @@ object wndCzat: TwndCzat
             Top = 180
             Width = 65
             Height = 22
-            Caption = 'Usuñ'
+            Caption = 'Usu'#324
             TabOrder = 7
             OnClick = btnUsunSlowoClick
             Glyph.Data = {
@@ -1756,7 +1756,7 @@ object wndCzat: TwndCzat
             Top = 180
             Width = 65
             Height = 22
-            Caption = 'Zmieñ'
+            Caption = 'Zmie'#324
             TabOrder = 8
             OnClick = btnZmienSlowoClick
             Glyph.Data = {
@@ -1826,7 +1826,7 @@ object wndCzat: TwndCzat
               Top = 14
               Width = 141
               Height = 17
-              Caption = 'Migaj paskiem tytu³u'
+              Caption = 'Migaj paskiem tytu'#322'u'
               TabOrder = 0
             end
             object chkSlowoGrajWava: TCheckBox
@@ -1834,7 +1834,7 @@ object wndCzat: TwndCzat
               Top = 28
               Width = 141
               Height = 17
-              Caption = 'Odtwórz wava'
+              Caption = 'Odtw'#243'rz wava'
               TabOrder = 2
             end
             object edtSlowoWAV: TEdit
@@ -1854,7 +1854,7 @@ object wndCzat: TwndCzat
           object Label18: TLabel
             Left = 14
             Top = 10
-            Width = 115
+            Width = 114
             Height = 13
             Caption = 'Twoja wersja czata:'
           end
@@ -1903,7 +1903,7 @@ object wndCzat: TwndCzat
             Top = 46
             Width = 103
             Height = 25
-            Caption = 'SprawdŸ wersjê'
+            Caption = 'Sprawd'#378' wersj'#281
             TabOrder = 0
             OnClick = btnSprawdzWersjeClick
           end
@@ -1927,7 +1927,7 @@ object wndCzat: TwndCzat
               Top = 6
               Width = 156
               Height = 13
-              Caption = 'Iloœæ plików do œci¹gniêcia:'
+              Caption = 'Ilo'#347#263' plik'#243'w do '#347'ci'#261'gni'#281'cia:'
             end
             object lblIloscPlikowDoSciagniecia: TLabel
               Left = 164
@@ -1958,7 +1958,7 @@ object wndCzat: TwndCzat
               Top = 156
               Width = 43
               Height = 13
-              Caption = 'Postêp:'
+              Caption = 'Post'#281'p:'
             end
             object Postep: TGauge
               Left = 10
@@ -2006,14 +2006,14 @@ object wndCzat: TwndCzat
               Top = 45
               Width = 70
               Height = 13
-              Caption = 'U¿ytkownik:'
+              Caption = 'U'#380'ytkownik:'
             end
             object Label24: TLabel
               Left = 42
               Top = 66
               Width = 36
               Height = 13
-              Caption = 'Has³o:'
+              Caption = 'Has'#322'o:'
             end
             object edtFTPHost: TEdit
               Left = 80
@@ -2065,14 +2065,14 @@ object wndCzat: TwndCzat
             Top = 6
             Width = 327
             Height = 13
-            Caption = 'Linki wyœwietlone na g³ównym przez innych czatowiczów:'
+            Caption = 'Linki wy'#347'wietlone na g'#322#243'wnym przez innych czatowicz'#243'w:'
           end
           object btnUsunWszystkieLinki: TSpeedButton
             Left = 8
             Top = 234
             Width = 120
             Height = 25
-            Caption = 'Usuñ wszystkie'
+            Caption = 'Usu'#324' wszystkie'
             Glyph.Data = {
               76010000424D7601000000000000760000002800000020000000100000000100
               04000000000000010000120B0000120B00001000000000000000000000000000
@@ -2094,7 +2094,7 @@ object wndCzat: TwndCzat
             Top = 234
             Width = 120
             Height = 25
-            Caption = 'Usuñ jeden'
+            Caption = 'Usu'#324' jeden'
             Glyph.Data = {
               76010000424D7601000000000000760000002800000020000000100000000100
               04000000000000010000120B0000120B00001000000000000000000000000000
@@ -2152,7 +2152,7 @@ object wndCzat: TwndCzat
         object TPage
           Left = 0
           Top = 0
-          Caption = 'DŸwiêki'
+          Caption = 'D'#378'wi'#281'ki'
           object GroupBox2: TGroupBox
             Left = 4
             Top = 74
@@ -2187,7 +2187,7 @@ object wndCzat: TwndCzat
               Top = 14
               Width = 141
               Height = 17
-              Caption = 'Migaj paskiem tytu³u'
+              Caption = 'Migaj paskiem tytu'#322'u'
               TabOrder = 0
             end
             object chkPrivGraj: TCheckBox
@@ -2195,7 +2195,7 @@ object wndCzat: TwndCzat
               Top = 28
               Width = 141
               Height = 17
-              Caption = 'Odtwórz wava'
+              Caption = 'Odtw'#243'rz wava'
               TabOrder = 2
             end
             object edtPrivWav: TEdit
@@ -2241,7 +2241,7 @@ object wndCzat: TwndCzat
               Top = 14
               Width = 141
               Height = 17
-              Caption = 'Migaj paskiem tytu³u'
+              Caption = 'Migaj paskiem tytu'#322'u'
               TabOrder = 0
             end
             object chkWejscieGraj: TCheckBox
@@ -2249,7 +2249,7 @@ object wndCzat: TwndCzat
               Top = 28
               Width = 141
               Height = 17
-              Caption = 'Odtwórz wava'
+              Caption = 'Odtw'#243'rz wava'
               TabOrder = 1
             end
             object edtWejscieWav: TEdit
@@ -2266,7 +2266,7 @@ object wndCzat: TwndCzat
             Top = 144
             Width = 250
             Height = 69
-            Caption = 'Reakcja na tekst znajomego na g³ównym'
+            Caption = 'Reakcja na tekst znajomego na g'#322#243'wnym'
             TabOrder = 2
             object btnGlownyOdtowrzWav: TSpeedButton
               Left = 223
@@ -2295,7 +2295,7 @@ object wndCzat: TwndCzat
               Top = 14
               Width = 141
               Height = 17
-              Caption = 'Migaj paskiem tytu³u'
+              Caption = 'Migaj paskiem tytu'#322'u'
               TabOrder = 0
             end
             object chkGlownyGraj: TCheckBox
@@ -2303,7 +2303,7 @@ object wndCzat: TwndCzat
               Top = 28
               Width = 141
               Height = 17
-              Caption = 'Odtwórz wava'
+              Caption = 'Odtw'#243'rz wava'
               TabOrder = 2
             end
             object edtGlownyWAV: TEdit
@@ -2320,7 +2320,7 @@ object wndCzat: TwndCzat
             Top = 144
             Width = 221
             Height = 69
-            Caption = 'Reakcja na tekst na g³ównym'
+            Caption = 'Reakcja na tekst na g'#322#243'wnym'
             TabOrder = 3
             object btnKtosGlownyOtworzWAV: TSpeedButton
               Left = 191
@@ -2349,7 +2349,7 @@ object wndCzat: TwndCzat
               Top = 14
               Width = 141
               Height = 17
-              Caption = 'Migaj paskiem tytu³u'
+              Caption = 'Migaj paskiem tytu'#322'u'
               TabOrder = 0
             end
             object chkKtosGlownyGraj: TCheckBox
@@ -2357,7 +2357,7 @@ object wndCzat: TwndCzat
               Top = 28
               Width = 141
               Height = 17
-              Caption = 'Odtwórz wava'
+              Caption = 'Odtw'#243'rz wava'
               TabOrder = 2
             end
             object edtKtosGlownyWAV: TEdit
@@ -2403,7 +2403,7 @@ object wndCzat: TwndCzat
               Top = 14
               Width = 141
               Height = 17
-              Caption = 'Migaj paskiem tytu³u'
+              Caption = 'Migaj paskiem tytu'#322'u'
               TabOrder = 0
             end
             object chkKtosPrivGraj: TCheckBox
@@ -2411,7 +2411,7 @@ object wndCzat: TwndCzat
               Top = 28
               Width = 141
               Height = 17
-              Caption = 'Odtwórz wava'
+              Caption = 'Odtw'#243'rz wava'
               TabOrder = 2
             end
             object edtKtosPrivWaV: TEdit
@@ -2457,7 +2457,7 @@ object wndCzat: TwndCzat
               Top = 14
               Width = 141
               Height = 17
-              Caption = 'Migaj paskiem tytu³u'
+              Caption = 'Migaj paskiem tytu'#322'u'
               TabOrder = 0
             end
             object chkKtosWejscieGraj: TCheckBox
@@ -2465,7 +2465,7 @@ object wndCzat: TwndCzat
               Top = 28
               Width = 141
               Height = 17
-              Caption = 'Odtwórz wava'
+              Caption = 'Odtw'#243'rz wava'
               TabOrder = 1
             end
             object edtKtosWejscieWav: TEdit
@@ -2481,20 +2481,20 @@ object wndCzat: TwndCzat
         object TPage
           Left = 0
           Top = 0
-          Caption = 'Po¿egnania'
+          Caption = 'Po'#380'egnania'
           object Label37: TLabel
             Left = 2
             Top = 4
             Width = 90
             Height = 13
-            Caption = 'Lista po¿egnañ:'
+            Caption = 'Lista po'#380'egna'#324':'
           end
           object Label38: TLabel
             Left = 4
             Top = 208
-            Width = 31
+            Width = 30
             Height = 13
-            Caption = 'Treœæ'
+            Caption = 'Tre'#347#263
           end
           object lbPozegnania: TListBox
             Left = 4
@@ -2543,7 +2543,7 @@ object wndCzat: TwndCzat
             Top = 248
             Width = 65
             Height = 22
-            Caption = 'Usuñ'
+            Caption = 'Usu'#324
             TabOrder = 3
             OnClick = btnusunPozegnanieClick
             Glyph.Data = {
@@ -2561,7 +2561,7 @@ object wndCzat: TwndCzat
             Top = 248
             Width = 65
             Height = 22
-            Caption = 'Zmieñ'
+            Caption = 'Zmie'#324
             TabOrder = 4
             OnClick = btnZmienPozegnanieClick
             Glyph.Data = {
@@ -2584,7 +2584,7 @@ object wndCzat: TwndCzat
             Top = 250
             Width = 191
             Height = 17
-            Caption = 'Po¿egnania aktywne'
+            Caption = 'Po'#380'egnania aktywne'
             TabOrder = 5
           end
         end
@@ -2682,7 +2682,7 @@ object wndCzat: TwndCzat
             Width = 420
             Height = 21
             TabOrder = 0
-            Text = 'Juz nie mog³em siê Ciebie doczekaæ %nick <cmok>'
+            Text = 'Juz nie mog'#322'em si'#281' Ciebie doczeka'#263' %nick <cmok>'
           end
           object edtF2: TEdit
             Left = 38
@@ -2690,7 +2690,7 @@ object wndCzat: TwndCzat
             Width = 420
             Height = 21
             TabOrder = 1
-            Text = '%nick na s³ówko na priv'
+            Text = '%nick na s'#322#243'wko na priv'
           end
           object edtF3: TEdit
             Left = 38
@@ -2706,7 +2706,7 @@ object wndCzat: TwndCzat
             Width = 420
             Height = 21
             TabOrder = 3
-            Text = 'Test ogólnikowy: nick=%nick, me=%me, last=%last, ver=%ver'
+            Text = 'Test og'#243'lnikowy: nick=%nick, me=%me, last=%last, ver=%ver'
           end
           object edtF8: TEdit
             Left = 38
@@ -2750,7 +2750,7 @@ object wndCzat: TwndCzat
             Width = 420
             Height = 21
             TabOrder = 9
-            Text = 'mo¿esz powtórzyæ %last ?? :)))'
+            Text = 'mo'#380'esz powt'#243'rzy'#263' %last ?? :)))'
           end
           object edtF10: TEdit
             Left = 38
@@ -2771,7 +2771,7 @@ object wndCzat: TwndCzat
         object TPage
           Left = 0
           Top = 0
-          Caption = 'Funkcje dla nicków'
+          Caption = 'Funkcje dla nick'#243'w'
           object Label57: TLabel
             Left = 6
             Top = 10
@@ -2836,7 +2836,7 @@ object wndCzat: TwndCzat
             Top = 54
             Width = 65
             Height = 22
-            Caption = 'Usuñ'
+            Caption = 'Usu'#324
             TabOrder = 3
             OnClick = btnUsunFunkcjeZListyClick
             Glyph.Data = {
@@ -2854,7 +2854,7 @@ object wndCzat: TwndCzat
             Top = 54
             Width = 65
             Height = 22
-            Caption = 'Zmieñ'
+            Caption = 'Zmie'#324
             TabOrder = 4
             OnClick = btnZmienFunkcjeWLiscieClick
             Glyph.Data = {
@@ -2876,7 +2876,7 @@ object wndCzat: TwndCzat
         object TPage
           Left = 0
           Top = 0
-          Caption = 'Funkcje dla numerów IP'
+          Caption = 'Funkcje dla numer'#243'w IP'
           object Label59: TLabel
             Left = 6
             Top = 10
@@ -2930,7 +2930,7 @@ object wndCzat: TwndCzat
             Top = 54
             Width = 65
             Height = 22
-            Caption = 'Usuñ'
+            Caption = 'Usu'#324
             TabOrder = 3
             OnClick = btnUsunFukcjeIPClick
             Glyph.Data = {
@@ -2948,7 +2948,7 @@ object wndCzat: TwndCzat
             Top = 54
             Width = 65
             Height = 22
-            Caption = 'Zmieñ'
+            Caption = 'Zmie'#324
             TabOrder = 4
             OnClick = btnZmienFunkcjeIPClick
             Glyph.Data = {
@@ -3175,7 +3175,7 @@ object wndCzat: TwndCzat
         Top = 216
         Width = 75
         Height = 25
-        Caption = 'Usuñ'
+        Caption = 'Usu'#324
         TabOrder = 8
         OnClick = btnUsunBanaClick
       end
@@ -3219,7 +3219,7 @@ object wndCzat: TwndCzat
         Top = 2
         Width = 121
         Height = 25
-        Caption = '&SprawdŸ info'
+        Caption = '&Sprawd'#378' info'
         Default = True
         TabOrder = 1
         OnClick = btnSprawdzInfoClick
@@ -3236,10 +3236,10 @@ object wndCzat: TwndCzat
         Font.Name = 'Fixedsys'
         Font.Style = []
         Lines.Strings = (
-          'Krótki opis dzia³ania:'
-          'W polu '#39'Numer IP'#39' nale¿y podaæ identyfikowany numer IP,'
-          'a potem klikn¹æ na przycisk [SprawdŸ info].'
-          'Program po³¹czy siê z baz¹  WhoIs i œci¹gnie  wymagane'
+          'Kr'#243'tki opis dzia'#322'ania:'
+          'W polu '#39'Numer IP'#39' nale'#380'y poda'#263' identyfikowany numer IP,'
+          'a potem klikn'#261#263' na przycisk [Sprawd'#378' info].'
+          'Program po'#322#261'czy si'#281' z baz'#261'  WhoIs i '#347'ci'#261'gnie  wymagane'
           'informacje.')
         ParentFont = False
         ScrollBars = ssVertical
@@ -3249,24 +3249,23 @@ object wndCzat: TwndCzat
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Top = 344
-    Width = 699
+    Top = 453
+    Width = 694
     Height = 19
     Panels = <
       item
-        Text = '13 paŸdziernika (poniedzialek) 2002, godzina 12:12:12'
+        Text = '13 pa'#378'dziernika (poniedzialek) 2002, godzina 12:12:12'
         Width = 265
       end
       item
         Style = psOwnerDraw
-        Text = 'Iloœæ privów: 99'
+        Text = 'Ilo'#347#263' priv'#243'w: 99'
         Width = 92
       end
       item
         Text = 'LocalIP: 999.999.999.999'
         Width = 50
       end>
-    SimplePanel = False
     OnDrawPanel = StatusBar1DrawPanel
   end
   object OdczytZaleglegoBufora: TTimer
@@ -3323,7 +3322,6 @@ object wndCzat: TwndCzat
     Top = 18
   end
   object dlgKolor: TColorDialog
-    Ctl3D = True
     Options = [cdFullOpen, cdSolidColor, cdAnyColor]
     Left = 330
     Top = 65526
@@ -3333,104 +3331,136 @@ object wndCzat: TwndCzat
     Top = 65526
     Bitmap = {
       494C010102000400040010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
-      000000000000360000002800000040000000100000000100180000000000000C
-      0000000000000000000000000000000000000000FF0000FF0000FF0000FF0000
-      FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF00
-      00FF00FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF00
-      00FF0000FF0000FF0000FF0000FF0000FF000000000000000000000000000000
+      0000000000003600000028000000400000001000000001002000000000000010
+      0000000000000000000000000000000000000000FF000000FF000000FF000000
+      FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF000000
+      FF000000FF000000FF000000FF000000FF0000FF000000FF000000FF000000FF
+      000000FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF
+      000000FF000000FF000000FF000000FF00000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000FF0000FF0000FF0000FF0000
-      FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF00
-      00FF00FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF00
-      00FF0000FF0000FF0000FF0000FF0000FF00000000000000000000FFFFFFFFFF
-      FF000000000000000000000000000000FFFFFFFFFFFF00000000000000000000
-      0000000000000000000000FFFFFFFFFFFF000000000000000000000000000000
-      FFFFFFFFFFFF0000000000000000000000000000FF0000FF0000FF0000FF0000
-      FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF00
-      00FF00FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF00
-      00FF0000FF0000FF0000FF0000FF0000FF00000000000000FFFFFF0000000000
-      00FFFFFF000000000000000000FFFFFF000000000000FFFFFF00000000000000
-      0000000000000000000000000000FFFFFFFFFFFF000000000000000000000000
-      000000FFFFFFFFFFFF0000000000000000000000FF0000FF0000FF0000FF0000
-      FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF00
-      00FF00FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF00
-      00FF0000FF0000FF0000FF0000FF0000FF00000000000000FFFFFF0000000000
-      00FFFFFF000000000000000000FFFFFF000000000000FFFFFF00000000000000
-      0000000000000000000000000000FFFFFFFFFFFF000000000000000000000000
-      000000FFFFFFFFFFFF0000000000000000000000FF0000FF0000FF0000FF0000
-      FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF00
-      00FF00FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF00
-      00FF0000FF0000FF0000FF0000FF0000FF00000000000000FFFFFF0000000000
-      00FFFFFF000000000000000000FFFFFF000000000000FFFFFF00000000000000
-      0000000000000000000000000000FFFFFFFFFFFF000000000000000000000000
-      000000FFFFFFFFFFFF0000000000000000000000FF0000FF0000FF0000FF0000
-      FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF00
-      00FF00FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF00
-      00FF0000FF0000FF0000FF0000FF0000FF00000000000000FFFFFFFFFFFFFFFF
-      FFFFFFFF000000000000000000FFFFFFFFFFFFFFFFFFFFFFFF00000000000000
-      0000000000000000FFFFFFFFFFFFFFFFFFFFFFFF000000000000000000FFFFFF
-      FFFFFFFFFFFFFFFFFF0000000000000000000000FF0000FF0000FF0000FF0000
-      FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF00
-      00FF00FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF00
-      00FF0000FF0000FF0000FF0000FF0000FF00000000000000000000FFFFFFFFFF
-      FF000000000000000000000000000000FFFFFFFFFFFF00000000000000000000
-      0000000000000000000000FFFFFFFFFFFF000000000000000000000000000000
-      FFFFFFFFFFFF0000000000000000000000000000FF0000FF0000FF0000FF0000
-      FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF00
-      00FF00FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF00
-      00FF0000FF0000FF0000FF0000FF0000FF000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000FF000000FF000000FF000000
+      FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF000000
+      FF000000FF000000FF000000FF000000FF0000FF000000FF000000FF000000FF
+      000000FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF
+      000000FF000000FF000000FF000000FF0000000000000000000000000000FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF0000000000000000000000000000000000000000000000000000000000FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF00000000000000000000000000000000000000FF000000FF000000FF000000
+      FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF000000
+      FF000000FF000000FF000000FF000000FF0000FF000000FF000000FF000000FF
+      000000FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF
+      000000FF000000FF000000FF000000FF00000000000000000000FFFFFF000000
+      000000000000FFFFFF00000000000000000000000000FFFFFF00000000000000
+      0000FFFFFF000000000000000000000000000000000000000000000000000000
+      0000FFFFFF00FFFFFF000000000000000000000000000000000000000000FFFF
+      FF00FFFFFF000000000000000000000000000000FF000000FF000000FF000000
+      FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF000000
+      FF000000FF000000FF000000FF000000FF0000FF000000FF000000FF000000FF
+      000000FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF
+      000000FF000000FF000000FF000000FF00000000000000000000FFFFFF000000
+      000000000000FFFFFF00000000000000000000000000FFFFFF00000000000000
+      0000FFFFFF000000000000000000000000000000000000000000000000000000
+      0000FFFFFF00FFFFFF000000000000000000000000000000000000000000FFFF
+      FF00FFFFFF000000000000000000000000000000FF000000FF000000FF000000
+      FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF000000
+      FF000000FF000000FF000000FF000000FF0000FF000000FF000000FF000000FF
+      000000FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF
+      000000FF000000FF000000FF000000FF00000000000000000000FFFFFF000000
+      000000000000FFFFFF00000000000000000000000000FFFFFF00000000000000
+      0000FFFFFF000000000000000000000000000000000000000000000000000000
+      0000FFFFFF00FFFFFF000000000000000000000000000000000000000000FFFF
+      FF00FFFFFF000000000000000000000000000000FF000000FF000000FF000000
+      FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF000000
+      FF000000FF000000FF000000FF000000FF0000FF000000FF000000FF000000FF
+      000000FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF
+      000000FF000000FF000000FF000000FF00000000000000000000FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00000000000000000000000000FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00000000000000000000000000FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF000000000000000000000000000000FF000000FF000000FF000000
+      FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF000000
+      FF000000FF000000FF000000FF000000FF0000FF000000FF000000FF000000FF
+      000000FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF
+      000000FF000000FF000000FF000000FF0000000000000000000000000000FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF0000000000000000000000000000000000000000000000000000000000FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF00000000000000000000000000000000000000FF000000FF000000FF000000
+      FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF000000
+      FF000000FF000000FF000000FF000000FF0000FF000000FF000000FF000000FF
+      000000FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF
+      000000FF000000FF000000FF000000FF00000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000FF0000FF0000FF0000FF0000
-      FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF00
-      00FF00FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF00
-      00FF0000FF0000FF0000FF0000FF0000FF000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000FF000000FF000000FF000000
+      FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF000000
+      FF000000FF000000FF000000FF000000FF0000FF000000FF000000FF000000FF
+      000000FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF
+      000000FF000000FF000000FF000000FF00000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000FF0000FF0000FF0000FF0000
-      FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF00
-      00FF00FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF00
-      00FF0000FF0000FF0000FF0000FF0000FF000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000FF000000FF000000FF000000
+      FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF000000
+      FF000000FF000000FF000000FF000000FF0000FF000000FF000000FF000000FF
+      000000FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF
+      000000FF000000FF000000FF000000FF00000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000FF0000FF0000FF0000FF0000
-      FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF00
-      00FF00FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF00
-      00FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF
-      0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000
-      FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF00
-      00FF0000FF0000FF0000FF0000FF0000FF000000FF0000FF0000FF0000FF0000
-      FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF00
-      00FF00FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF00
-      00FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF
-      0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000
-      FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF00
-      00FF0000FF0000FF0000FF0000FF0000FF000000FF0000FF0000FF0000FF0000
-      FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF00
-      00FF00FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF00
-      00FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF
-      0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000
-      FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF00
-      00FF0000FF0000FF0000FF0000FF0000FF000000FF0000FF0000FF0000FF0000
-      FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF00
-      00FF00FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF00
-      00FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF
-      0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000
-      FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF00
-      00FF0000FF0000FF0000FF0000FF0000FF000000FF0000FF0000FF0000FF0000
-      FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF00
-      00FF00FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF00
-      00FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF
-      0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000
-      FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF00
-      00FF0000FF0000FF0000FF0000FF0000FF000000FF0000FF0000FF0000FF0000
-      FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF00
-      00FF00FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF00
-      00FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF
-      0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000
-      FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF0000FF00
-      00FF0000FF0000FF0000FF0000FF0000FF00424D3E000000000000003E000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000FF000000FF000000FF000000
+      FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF000000
+      FF000000FF000000FF000000FF000000FF0000FF000000FF000000FF000000FF
+      000000FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF
+      000000FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF
+      000000FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF
+      000000FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF
+      000000FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF
+      000000FF000000FF000000FF000000FF00000000FF000000FF000000FF000000
+      FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF000000
+      FF000000FF000000FF000000FF000000FF0000FF000000FF000000FF000000FF
+      000000FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF
+      000000FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF
+      000000FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF
+      000000FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF
+      000000FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF
+      000000FF000000FF000000FF000000FF00000000FF000000FF000000FF000000
+      FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF000000
+      FF000000FF000000FF000000FF000000FF0000FF000000FF000000FF000000FF
+      000000FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF
+      000000FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF
+      000000FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF
+      000000FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF
+      000000FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF
+      000000FF000000FF000000FF000000FF00000000FF000000FF000000FF000000
+      FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF000000
+      FF000000FF000000FF000000FF000000FF0000FF000000FF000000FF000000FF
+      000000FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF
+      000000FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF
+      000000FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF
+      000000FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF
+      000000FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF
+      000000FF000000FF000000FF000000FF00000000FF000000FF000000FF000000
+      FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF000000
+      FF000000FF000000FF000000FF000000FF0000FF000000FF000000FF000000FF
+      000000FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF
+      000000FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF
+      000000FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF
+      000000FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF
+      000000FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF
+      000000FF000000FF000000FF000000FF00000000FF000000FF000000FF000000
+      FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF000000
+      FF000000FF000000FF000000FF000000FF0000FF000000FF000000FF000000FF
+      000000FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF
+      000000FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF
+      000000FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF
+      000000FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF
+      000000FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF
+      000000FF000000FF000000FF000000FF0000424D3E000000000000003E000000
       2800000040000000100000000100010000000000800000000000000000000000
       000000000000000000000000FFFFFF00000000000000FF000000000000FF0000
       00000000FF0000FF000000000000FF000000000000FF000000000000FF0000FF
@@ -3445,17 +3475,17 @@ object wndCzat: TwndCzat
     CycleInterval = 100
     Icon.Data = {
       0000010001001010040000000000280100001600000028000000100000002000
-      0000010004000000000080000000000000000000000010000000000000000000
-      0000000080000080000000808000800000008000800080800000C0C0C0008080
-      80000000FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00AAAA
-      AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-      AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-      AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-      AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA0000
+      0000010004000000000080000000000000000000000000000000000000000000
+      000000008000008000000080800080000000800080008080000080808000C0C0
+      C0000000FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF009999
+      9999999999999999999999999999999999999999999999999999999999999999
+      9999999999999999999999999999999999999999999999999999999999999999
+      9999999999999999999999999999999999999999999999999999999999999999
+      9999999999999999999999999999999999999999999999999999999999990000
       0000000000000000000000000000000000000000000000000000000000000000
       000000000000000000000000000000000000000000000000000000000000}
     IconVisible = True
-    IconIndex = 1
+    IconIndex = 0
     PopupMenu = TrayPopupMenu
     LeftPopup = True
     MinimizeToTray = True
@@ -3468,7 +3498,7 @@ object wndCzat: TwndCzat
     Left = 358
     Top = 65526
     object Pokaokno1: TMenuItem
-      Caption = '&Poka¿ okno'
+      Caption = '&Poka'#380' okno'
       Default = True
       OnClick = Pokaokno1Click
     end
@@ -3489,104 +3519,136 @@ object wndCzat: TwndCzat
     Top = 36
     Bitmap = {
       494C010108000900040010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
-      0000000000003600000028000000400000003000000001001800000000000024
-      000000000000000000000000000000000000FFE1FFFFE1FFFFE1FFFFE1FFFFE1
-      FFFFE1FFFFE1FFFFE1FFFFE1FFFF000000E1FFFFE1FFFFE1FFFFE1FFFFE1FFFF
-      000000E1FFFF000000E1FFFFE1FFFFE1FFFF000000E1FFFF000000E1FFFFE1FF
-      FFE1FFFF000000E1FFFF000000E1FFFF000000E1FFFFE1FFFFE1FFFF000000E1
-      FFFFE1FFFFE1FFFFE1FFFFE1FFFF000000E1FFFFE1FFFFE1FFFFE1FFFFE1FFFF
-      E1FFFF000000000000000000000000000000E1FFFFE1FFFF0000000000000000
-      00000000000000E1FFFFE1FFFF000000E1FFFF000000E1FFFFE1FFFF000000E1
-      FFFF000000E1FFFFE1FFFF000000E1FFFFE1FFFF000000E1FFFF000000E1FFFF
-      E1FFFFE1FFFF000000E1FFFF000000E1FFFFE1FFFFE1FFFF000000E1FFFF0000
-      00E1FFFFE1FFFFE1FFFF000000E1FFFF000000E1FFFFE1FFFFE1FFFFE1FFFFE1
-      FFFF000000E1FFFFE1FFFFE1FFFFE1FFFFE1FFFF000000000000000000000000
-      000000E1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FFFF000000E1FF
-      FF000000000000000000000000000000E1FFFFE1FFFFE1FFFF000000E1FFFF00
-      0000E1FFFF000000E1FFFF000000E1FFFFE1FFFFE1FFFF000000E1FFFF000000
-      E1FFFFE1FFFFE1FFFF000000E1FFFF000000E1FFFFE1FFFFE1FFFF000000E1FF
-      FF000000E1FFFFE1FFFFE1FFFF000000E1FFFF000000E1FFFF000000E1FFFF00
-      0000E1FFFF000000E1FFFFE1FFFFE1FFFF000000E1FFFFE1FFFFE1FFFFE1FFFF
-      E1FFFF000000E1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FFFF000000E1FFFFE1FF
-      FFE1FFFF000000E1FFFF000000E1FFFFE1FFFFFF000000E1FFFF000000E1FFFF
-      000000E1FFFFE1FFFFE1FFFF000000E1FFFFE1FFFFE1FFFFE1FFFFE1FFFF0000
-      00E1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FFFF000000E1FFFFE1FFFFE1FFFF00
-      0000E1FFFFE1FFFF000000E1FFFFE1FFFFE1FFFF000000E1FFFFE1FFFF000000
-      E1FFFFE1FFFFE1FFFFE1FFFF000000E1FFFFE1FFFF000000E1FFFFE1FFFFE1FF
-      FFE1FFFFE1FFFFE1FFFF000000E1FFFFE1FFFFE1FFFFE1FFFF000000E1FFFFE1
-      FFFFE1FFFF000000E0E0000000E1FFFFE1FFFFFFE1FFFFE1FFFF000000E1FFFF
-      000000000000000000000000000000E1FFFF000000E1FFFFE1FFFFE1FFFFE1FF
-      FFE1FFFF000000E1FFFFE1FFFF000000E1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1
-      FFFFE1FFFFE1FFFFE1FFFF000000E1FFFF000000E1FFFFE1FFFF000000E1FFFF
-      E1FFFFE1FFFFE1FFFFE1FFFF000000000000E1FFFFE1FFFFE1FFFFE1FFFF0000
-      00E1FFFFE1FFFFE1FFFFE1FFFFE1FFFF000000E1FFFF000000E1FFFFE1FFFFE1
-      FFFF000000E1FFFF000000E1FFFFE1FFFFE10000E1FFFFE1FFFFE1FFFF000000
-      E1FFFF000000E1FFFF000000E1FFFF000000E1FFFF000000E1FFFFE1FFFF0000
-      00E1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FFFF000000E1FFFFE1FFFFE1FFFFE1
-      FFFFE1FFFFE1FFFF000000E1FFFFE1FFFFE1FFFF000000E1FFFF000000E1FFFF
-      E1FFFF000000E1FFFFE1FFFF000000E1FFFF000000E1FFFFE1FFFF000000E1FF
-      FFE1FFFF000000E1FFFFE1FFFF000000000000000000000000E1FFFF000000E1
-      FFFFE1FFFFE1FFFF000000E1FFFF000000E1E1FFFFE1FFFF000000E1FFFFE1FF
-      FFE1FFFF000000E1FFFFE1FFFF000000E1FFFFE1FFFFE1FFFFE1FFFF000000E1
-      FFFFE1FFFF000000E1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FFFF000000E1FFFF
-      E1FFFF000000000000000000E1FFFFE1FFFFE1FFFF000000E0E0000000E1FFFF
-      E1FFFFE1FFFFE1FFFF000000E1FFFF000000E1FFFF000000E1FFFF000000E1FF
-      FFE1FFFFE1FFFF000000E1FFFF000000E1FFFFE1FFFFE1FFFF000000E1FFFF00
-      0000E1FFFFE1FFFFE1FFFF000000E1FFFF00E1FFFFE1FFFFE1FFFF000000E1FF
-      FFE1FFFF000000E1FFFF000000E1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1
-      FFFFE1FFFFE1FFFFE1FFFFE1FFFF000000E1FFFFE1FFFFE1FFFFE1FFFFE1FFFF
-      000000E1FFFF000000E1FFFFE1FFFFE1FFFF000000E1FFFF000000E1FFFFE1FF
-      FFE1FFFF000000E1FFFF000000E1FFFF000000E1FFFFE1FFFFE1FFFF000000E1
-      FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FFFF000000E1FFFFE1FFFFE1FFFFE1FFFF
-      E1FFFF000000E1FFFFE1FFFFE1FFFF000000E1FFFFE1FFFF000000E1FFFFE1FF
-      FFE1FFFF000000E1FFFF000000E1FFFFE1FFFF000000E1FFFFE1FFFF000000E1
-      FFFF000000E1FFFFE1FFFF000000E1FFFFE1FFFF000000E1FFFFE1FFFFE1FFFF
-      E1FFFFE1FFFF000000E1FFFF000000000000E1FFFFE1FFFF000000E1FFFF0000
-      00E1FFFFE1FFFFE1FFFF000000E1FFFF000000E1FFFFE1FFFFE1FFFF000000E1
-      FFFF000000E1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FFFF000000E1FFFF000000
-      E1FFFFE1FFFFE1FFFFE1FFFFE1FFFF000000FFE1FFFFE1FFFFE1FFFFE1FFFFE1
-      FFFFE1FFFF000000FFFF000000E1FFFFE1FFFFE1FFFF000000E1FFFFE1FFFFE1
-      FFFF000000E1FFFFE1FFFFE1FFFF000000E1FFFFE1FFFF000000E1FFFF000000
-      000000E1FFFFE1FFFF000000E1FFFF000000E1FFFFE1FFFFE1FFFF000000E1FF
-      FF000000E1FFFFE1FFFFE1FFFF000000E1FFFF000000E1FFFFE1FFFF000000E1
-      FFFFE1FFFF000000E1FFFF000000E1FFFFE1FFFF000000E1FFFFE1FFFFE1FFFF
-      E1FFFF000000E1FFFFE1FFFFE1FFFFE1FFFF00E1FFFFE1FFFF00000000000000
-      0000000000E1FFFF000000E1FFFFE1FFFFE1FFFF000000E1FFFF000000E1FFFF
-      E1FFFF000000000000000000000000E1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FF
-      FF000000E1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FFFF000000E1FFFF000000E1
-      FFFFE1FFFFE1FFFFE1FFFF000000E1FFFF000000E1FFFFE1FFFFE1FFFF000000
-      E1FFFFE1FFFFE1FFFFE1FFFF000000E1FFFFE1FFFF000000E1FFFFE1FFFFE1FF
-      FFE1FFFFE1FFFFE1FFFF000000E1FFFFE1FF00000000E1FFFFE1FFFF000000E1
-      FFFF000000000000E1FFFFE1FFFFE1FFFF000000000000000000000000E1FFFF
-      E1FFFF000000000000000000E1FFFFE1FFFF000000000000E1FFFFE1FFFFE1FF
-      FFE1FFFFE1FFFF000000E1FFFF000000E1FFFFE1FFFFE1FFFFE1FFFFE1FFFF00
-      0000000000000000000000E1FFFFE1FFFFE1FFFF000000E1FFFF000000E1FFFF
-      E1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FFFF0000
-      00E1FFFFE1FFFFE1FFFFE1FFFFE1FFFF0000FF000000000000E1FFFFE1FFFFE1
-      FFFF000000000000000000000000E1FFFFE1FFFF000000000000000000E1FFFF
-      E1FFFF000000E1FFFFE1FFFF000000E1FFFFE1FFFF000000E1FFFFE1FFFF0000
-      00000000E1FFFFE1FFFFE1FFFFE1FFFFE1FFFF000000E1FFFFE1FFFFE1FFFFE1
-      FFFFE1FFFFE1FFFFE1FFFF000000000000000000E1FFFFE1FFFF000000000000
-      000000E1FFFF000000000000E1FFFFE1FFFF000000000000000000E1FFFF0000
-      00000000E1FFFFE1FFFFE1FFFF0000000000FFFF000000E1FFFFE1FFFFE1FFFF
-      E1FFFFE1FFFF000000E1FFFF000000E1FFFFE1FFFFE1FFFFE1FFFF000000E1FF
-      FF000000E1FFFFE1FFFFE1FFFF000000E1FFFFE1FFFFE1FFFFE1FFFF000000E1
-      FFFFE1FFFF000000E1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FFFF000000E1FFFF
-      E1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FFFF000000E0E0000000E1FFFF
-      E1FFFFE1FFFF000000E1FFFFE1FFFFE1FFFF000000E1FFFFE1FFFFE1FFFF0000
-      00E1FFFFE1FFFF000000E1FFFF000000E1FFFFFFE1FFFFE1FFFF000000000000
-      E1FFFFE1FFFFE1FFFFE1FFFFE1FFFF000000E1FFFFE1FFFFE1FFFFE1FFFFE1FF
-      FFE1FFFFE1FFFF000000000000E1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1
-      FFFFE1FFFFE1FFFFE1FFFFE1FFFF000000E1FFFFE1FFFFE1FFFFE1FFFFE1FFFF
-      E1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FF
-      FFE1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FFFF000000E1
-      FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FFFF
-      E1FFFF000000E1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FF
-      FFE1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1
-      FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FFFF
-      E1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FF
-      FFE1FFFFE1FFFFE1FFFF000000E1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1
-      FFFFE1FFFFE1FFFFE1FFFFE1FFFFE1FFFFE10000000000000000000000000000
+      0000000000003600000028000000400000003000000001002000000000000030
+      000000000000000000000000000000000000FFE1FF00FFE1FF00FFE1FF00FFE1
+      FF00FFE1FF00FFE1FF00FFE1FF00FFE1FF00FFE1FF00FF00000000E1FF00FFE1
+      FF00FFE1FF00FFE1FF00FFE1FF00FF00000000E1FF00FF00000000E1FF00FFE1
+      FF00FFE1FF00FF00000000E1FF00FF00000000E1FF00FFE1FF00FFE1FF00FF00
+      000000E1FF00FF00000000E1FF00FF00000000E1FF00FFE1FF00FFE1FF00FF00
+      000000E1FF00FFE1FF00FFE1FF00FFE1FF00FFE1FF00FF00000000E1FF00FFE1
+      FF00FFE1FF00FFE1FF00FFE1FF00FFE1FF00FF00000000000000000000000000
+      00000000000000E1FF00FFE1FF00FF0000000000000000000000000000000000
+      000000E1FF00FFE1FF00FF00000000E1FF00FF00000000E1FF00FFE1FF00FF00
+      000000E1FF00FF00000000E1FF00FFE1FF00FF00000000E1FF00FFE1FF00FF00
+      000000E1FF00FF00000000E1FF00FFE1FF00FFE1FF00FF00000000E1FF00FF00
+      000000E1FF00FFE1FF00FFE1FF00FF00000000E1FF00FF00000000E1FF00FFE1
+      FF00FFE1FF00FF00000000E1FF00FF00000000E1FF00FFE1FF00FFE1FF00FFE1
+      FF00FFE1FF00FF00000000E1FF00FFE1FF00FFE1FF00FFE1FF00FFE1FF00FF00
+      00000000000000000000000000000000000000E1FF00FFE1FF00FFE1FF00FFE1
+      FF00FFE1FF00FFE1FF00FFE1FF00FFE1FF00FF00000000E1FF00FF0000000000
+      000000000000000000000000000000E1FF00FFE1FF00FFE1FF00FF00000000E1
+      FF00FF00000000E1FF00FF00000000E1FF00FF00000000E1FF00FFE1FF00FFE1
+      FF00FF00000000E1FF00FF00000000E1FF00FFE1FF00FFE1FF00FF00000000E1
+      FF00FF00000000E1FF00FFE1FF00FFE1FF00FF00000000E1FF00FF00000000E1
+      FF00FFE1FF00FFE1FF00FF00000000E1FF00FF00000000E1FF00FF00000000E1
+      FF00FF00000000E1FF00FF00000000E1FF00FFE1FF00FFE1FF00FF00000000E1
+      FF00FFE1FF00FFE1FF00FFE1FF00FFE1FF00FF00000000E1FF00FFE1FF00FFE1
+      FF00FFE1FF00FFE1FF00FFE1FF00FF00000000E1FF00FFE1FF00FFE1FF00FF00
+      000000E1FF00FF00000000E1FF00FFE1FF00FFFF00000000E100FFFF00000000
+      E100FFFF00000000E100FFFFE100FFFFE100FFFF00000000E100FFFFE100FFFF
+      E100FFFFE100FFFFE100FFFF00000000E100FFFFE100FFFFE100FFFFE100FFFF
+      E100FFFFE100FFFF00000000E100FFFFE100FFFFE100FFFF00000000E100FFFF
+      E100FFFF00000000E100FFFFE100FFFFE100FFFF00000000E100FFFFE100FFFF
+      00000000E100FFFFE100FFFFE100FFFFE100FFFF00000000E100FFFFE100FFFF
+      00000000E100FFFFE100FFFFE100FFFFE100FFFFE100FFFFE100FFFF00000000
+      E100FFFFE100FFFFE100FFFFE100FFFF00000000E100FFFFE100FFFFE100FFFF
+      00000000E000E000000000E1FF00FFE1FF00FFFFE100FFFFE100FFFF00000000
+      E100FFFF0000000000000000000000000000000000000000E100FFFF00000000
+      E100FFFFE100FFFFE100FFFFE100FFFFE100FFFF00000000E100FFFFE100FFFF
+      00000000E100FFFFE100FFFFE100FFFFE100FFFFE100FFFFE100FFFFE100FFFF
+      E100FFFFE100FFFF00000000E100FFFF00000000E100FFFFE100FFFF00000000
+      E100FFFFE100FFFFE100FFFFE100FFFFE100FFFF0000000000000000E100FFFF
+      E100FFFFE100FFFFE100FFFF00000000E100FFFFE100FFFFE100FFFFE100FFFF
+      E100FFFF00000000E100FFFF00000000E100FFFFE100FFFFE100FFFF00000000
+      E100FFFF00000000E100FFFFE100FFFFE1000000E100FFFFE100FFFFE100FFFF
+      00000000E100FFFF00000000E100FFFF00000000E100FFFF00000000E100FFFF
+      00000000E100FFFFE100FFFF00000000E100FFFFE100FFFFE100FFFFE100FFFF
+      E100FFFFE100FFFF00000000E100FFFFE100FFFFE100FFFFE100FFFFE100FFFF
+      E100FFFF00000000E100FFFFE100FFFFE100FFFF00000000E100FFFF00000000
+      E100FFFFE100FFFF00000000E100FFFFE100FFFF00000000E100FFFF00000000
+      E100FFFFE100FFFF00000000E100FFFFE100FFFF00000000E100FFFFE100FFFF
+      00000000000000000000000000000000E100FFFF00000000E100FFFFE100FFFF
+      E100FFFF00000000E100FFFF00000000E100E1FFFF00E1FFFF0000000000E1FF
+      FF00E1FFFF00E1FFFF0000000000E1FFFF00E1FFFF0000000000E1FFFF00E1FF
+      FF00E1FFFF00E1FFFF0000000000E1FFFF00E1FFFF0000000000E1FFFF00E1FF
+      FF00E1FFFF00E1FFFF00E1FFFF00E1FFFF0000000000E1FFFF00E1FFFF000000
+      00000000000000000000E1FFFF00E1FFFF00E1FFFF0000000000E0E000000000
+      E100FFFFE100FFFFE100FFFFE100FFFF00000000E100FFFF00000000E100FFFF
+      00000000E100FFFF00000000E100FFFFE100FFFFE100FFFF00000000E100FFFF
+      00000000E100FFFFE100FFFFE100FFFF00000000E100FFFF00000000E100FFFF
+      E100FFFFE100FFFF00000000E100FFFF0000E1FFFF00E1FFFF00E1FFFF000000
+      0000E1FFFF00E1FFFF0000000000E1FFFF0000000000E1FFFF00E1FFFF00E1FF
+      FF00E1FFFF00E1FFFF00E1FFFF00E1FFFF00E1FFFF00E1FFFF00E1FFFF00E1FF
+      FF0000000000E1FFFF00E1FFFF00E1FFFF00E1FFFF00E1FFFF0000000000E1FF
+      FF0000000000E1FFFF00E1FFFF00E1FFFF0000000000E1FFFF0000000000E1FF
+      FF00E1FFFF00E1FFFF0000000000E1FFFF0000000000E1FFFF0000000000E1FF
+      FF00E1FFFF00E1FFFF0000000000E1FFFF00E1FFFF00E1FFFF00E1FFFF00E1FF
+      FF00E1FFFF0000000000E1FFFF00E1FFFF00E1FFFF00E1FFFF00E1FFFF000000
+      0000E1FFFF00E1FFFF00E1FFFF0000000000E1FFFF00E1FFFF0000000000E1FF
+      FF00E1FFFF00E1FFFF0000000000E1FFFF0000000000E1FFFF00E1FFFF000000
+      0000E1FFFF00E1FFFF0000000000E1FFFF0000000000E1FFFF00E1FFFF000000
+      0000E1FFFF00E1FFFF0000000000E1FFFF00E1FFFF00E1FFFF00E1FFFF00E1FF
+      FF0000000000E1FFFF000000000000000000E1FFFF00E1FFFF0000000000E1FF
+      FF0000000000E1FFFF00E1FFFF00E1FFFF0000000000E1FFFF0000000000E1FF
+      FF00E1FFFF00E1FFFF0000000000E1FFFF0000000000E1FFFF00E1FFFF00E1FF
+      FF00E1FFFF00E1FFFF00E1FFFF0000000000E1FFFF0000000000E1FFFF00E1FF
+      FF00E1FFFF00E1FFFF00E1FFFF0000000000FFE1FF00FFE1FF00FFE1FF00FFE1
+      FF00FFE1FF00FFE1FF00FF00000000FFFF0000000000E1FFFF00E1FFFF00E1FF
+      FF0000000000E1FFFF00E1FFFF00E1FFFF0000000000E1FFFF00E1FFFF00E1FF
+      FF0000000000E1FFFF00E1FFFF0000000000E1FFFF000000000000000000E1FF
+      FF00E1FFFF0000000000E1FFFF0000000000E1FFFF00E1FFFF00E1FFFF000000
+      0000E1FFFF0000000000E1FFFF00E1FFFF00E1FFFF0000000000E1FFFF000000
+      0000E1FFFF00E1FFFF0000000000E1FFFF00E1FFFF0000000000E1FFFF000000
+      0000E1FFFF00E1FFFF0000000000E1FFFF00E1FFFF00E1FFFF00E1FFFF000000
+      0000E1FFFF00E1FFFF00E1FFFF00E1FFFF0000E1FF00FFE1FF00FF0000000000
+      0000000000000000000000E1FF00FF00000000E1FF00FFE1FF00FFE1FF00FF00
+      000000E1FF00FF00000000E1FF00FFE1FF00FF00000000000000000000000000
+      000000E1FF00FFE1FF00FFE1FF00FFE1FF00FFE1FF00FFE1FF00FF00000000E1
+      FF00FFE1FF00FFE1FF00FFE1FF00FFE1FF00FFE1FF00FF00000000E1FF00FF00
+      000000E1FF00FFE1FF00FFE1FF00FFE1FF00FF00000000E1FF00FF00000000E1
+      FF00FFE1FF00FFE1FF00FF00000000E1FF00FFE1FF00FFE1FF00FFE1FF00FF00
+      000000E1FF00FFE1FF00FF00000000E1FF00FFE1FF00FFE1FF00FFE1FF00FFE1
+      FF00FFE1FF00FF00000000E1FF00FFE1FF000000000000E1FF00FFE1FF00FF00
+      000000E1FF00FF0000000000000000E1FF00FFE1FF00FFE1FF00FF0000000000
+      0000000000000000000000E1FF00FFE1FF00FF000000000000000000000000E1
+      FF00FFE1FF00FF0000000000000000E1FF00FFE1FF00FFE1FF00FFE1FF00FFE1
+      FF00FF00000000E1FF00FF00000000E1FF00FFE1FF00FFE1FF00FFE1FF00FFE1
+      FF00FF00000000000000000000000000000000E1FF00FFE1FF00FFE1FF00FF00
+      000000E1FF00FF00000000E1FF00FFE1FF00FFE1FF00FFE1FF00FFE1FF00FFE1
+      FF00FFE1FF00FFE1FF00FFE1FF00FFE1FF00FFE1FF00FF00000000E1FF00FFE1
+      FF00FFE1FF00FFE1FF00FFE1FF00FF000000FF0000000000000000E1FF00FFE1
+      FF00FFE1FF00FF00000000000000000000000000000000E1FF00FFE1FF00FF00
+      0000000000000000000000E1FF00FFE1FF00FF00000000E1FF00FFE1FF00FF00
+      000000E1FF00FFE1FF00FF00000000E1FF00FFE1FF00FF0000000000000000E1
+      FF00FFE1FF00FFE1FF00FFE1FF00FFE1FF00FF00000000E1FF00FFE1FF00FFE1
+      FF00FFE1FF00FFE1FF00FFE1FF00FFE1FF00FF000000000000000000000000E1
+      FF00FFE1FF00FF000000000000000000000000E1FF00FF0000000000000000E1
+      FF00FFE1FF00FF000000000000000000000000E1FF00FF0000000000000000E1
+      FF00FFE1FF00FFE1FF00FF00000000000000FFFF00000000E100FFFFE100FFFF
+      E100FFFFE100FFFFE100FFFF00000000E100FFFF00000000E100FFFFE100FFFF
+      E100FFFFE100FFFF00000000E100FFFF00000000E100FFFFE100FFFFE100FFFF
+      00000000E100FFFFE100FFFFE100FFFFE100FFFF00000000E100FFFFE100FFFF
+      00000000E100FFFFE100FFFFE100FFFFE100FFFFE100FFFFE100FFFF00000000
+      E100FFFFE100FFFFE100FFFFE100FFFFE100FFFFE100FFFFE100FFFFE100FFFF
+      00000000E000E000000000E1FF00FFE1FF00FFE1FF00FF00000000E1FF00FFE1
+      FF00FFE1FF00FF00000000E1FF00FFE1FF00FFE1FF00FF00000000E1FF00FFE1
+      FF00FF00000000E1FF00FF00000000E1FF00FFFFE100FFFFE100FFFF00000000
+      00000000E100FFFFE100FFFFE100FFFFE100FFFFE100FFFF00000000E100FFFF
+      E100FFFFE100FFFFE100FFFFE100FFFFE100FFFFE100FFFF0000000000000000
+      E100FFFFE100FFFFE100FFFFE100FFFFE100FFFFE100FFFFE100FFFFE100FFFF
+      E100FFFFE100FFFFE100FFFF00000000E100FFFFE100FFFFE100FFFFE100FFFF
+      E100FFFFE100FFFFE100FFFFE100FFFFE100FFFFE100FFFFE100FFFFE100FFFF
+      E100FFFFE100FFFFE100FFFFE100FFFFE100FFFFE100FFFFE100FFFFE100FFFF
+      E100FFFFE100FFFFE100FFFFE100FFFFE100FFFF00000000E100FFFFE100FFFF
+      E100FFFFE100FFFFE100FFFFE100FFFFE100FFFFE100FFFFE100FFFFE100FFFF
+      E100FFFFE100FFFF00000000E100FFFFE100FFFFE100FFFFE100FFFFE100FFFF
+      E100FFFFE100FFFFE100FFFFE100FFFFE100FFFFE100FFFFE100FFFFE100FFFF
+      E100FFFFE100FFFFE100FFFFE100FFFFE100FFFFE100FFFFE100FFFFE100FFFF
+      E100FFFFE100FFFFE100FFFFE100FFFFE100FFFFE100FFFFE100FFFFE100FFFF
+      E100FFFFE100FFFFE100FFFFE100FFFFE100FFFFE100FFFFE100FFFFE100FFFF
+      E100FFFFE100FFFFE100FFFFE100FFFFE100FFFFE100FFFFE100FFFF00000000
+      E100FFFFE100FFFFE100FFFFE100FFFFE100FFFFE100FFFFE100FFFFE100FFFF
+      E100FFFFE100FFFFE100FFFFE100FFFFE1000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -3610,43 +3672,64 @@ object wndCzat: TwndCzat
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
-      000000000000000000000000000000000000000000000000000000FFFFFFFFFF
-      FF000000000000000000000000000000FFFFFFFFFFFF00000000000000000000
-      0000000000000000000000FFFFFFFFFFFF000000000000000000000000000000
-      FFFFFFFFFFFF000000000000000000000000000000000000000000FFFFFFFFFF
-      FF000000000000000000000000000000FFFFFFFFFFFF00000000000000000000
-      0000000000000000000000FFFFFFFFFFFF000000000000000000000000000000
-      FFFFFFFFFFFF000000000000000000000000000000000000FFFFFF0000000000
-      00FFFFFF000000000000000000FFFFFF000000000000FFFFFF00000000000000
-      0000000000000000FFFFFF000000000000FFFFFF000000000000000000FFFFFF
-      000000000000FFFFFF000000000000000000000000000000FFFFFF0000000000
-      00FFFFFF000000000000000000FFFFFF000000000000FFFFFF00000000000000
-      0000000000000000FFFFFF000000000000FFFFFF000000000000000000FFFFFF
-      000000000000FFFFFF000000000000000000000000000000000000FFFFFFFFFF
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000000000000000000000000000FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF0000000000000000000000000000000000000000000000000000000000FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF0000000000000000000000000000000000000000000000000000000000FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF0000000000000000000000000000000000000000000000000000000000FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF00000000000000000000000000000000000000000000000000FFFFFF000000
+      000000000000FFFFFF00000000000000000000000000FFFFFF00000000000000
+      0000FFFFFF000000000000000000000000000000000000000000FFFFFF000000
+      000000000000FFFFFF00000000000000000000000000FFFFFF00000000000000
+      0000FFFFFF000000000000000000000000000000000000000000FFFFFF000000
+      000000000000FFFFFF00000000000000000000000000FFFFFF00000000000000
+      0000FFFFFF000000000000000000000000000000000000000000FFFFFF000000
+      000000000000FFFFFF00000000000000000000000000FFFFFF00000000000000
+      0000FFFFFF00000000000000000000000000000000000000000000000000FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000FFFFFF000000
+      000000000000FFFFFF00000000000000000000000000FFFFFF00000000000000
+      0000FFFFFF00000000000000000000000000000000000000000000000000FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF00000000000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00000000000000000000000000FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00000000000000000000000000FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF000000
+      000000000000FFFFFF00000000000000000000000000FFFFFF00000000000000
+      0000FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00000000000000000000000000FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00000000000000000000000000FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00000000000000000000000000FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00000000000000000000000000FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00000000000000000000000000FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00000000000000000000000000000000000000000000000000FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF0000000000000000000000000000000000000000000000000000000000FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF0000000000000000000000000000000000000000000000000000000000FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF0000000000000000000000000000000000000000000000000000000000FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
       FF00000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
-      000000000000000000000000000000000000000000000000FFFFFF0000000000
-      00FFFFFF000000000000000000FFFFFF000000000000FFFFFF00000000000000
-      0000000000000000000000FFFFFFFFFFFF000000000000000000000000000000
-      FFFFFFFFFFFF000000000000000000000000000000000000FFFFFFFFFFFFFFFF
-      FFFFFFFF000000000000000000FFFFFFFFFFFFFFFFFFFFFFFF00000000000000
-      0000000000000000FFFFFFFFFFFFFFFFFFFFFFFF000000000000000000FFFFFF
-      FFFFFFFFFFFFFFFFFF000000000000000000000000000000FFFFFF0000000000
-      00FFFFFF000000000000000000FFFFFF000000000000FFFFFF00000000000000
-      0000000000000000FFFFFFFFFFFFFFFFFFFFFFFF000000000000000000FFFFFF
-      FFFFFFFFFFFFFFFFFF000000000000000000000000000000FFFFFFFFFFFFFFFF
-      FFFFFFFF000000000000000000FFFFFFFFFFFFFFFFFFFFFFFF00000000000000
-      0000000000000000FFFFFFFFFFFFFFFFFFFFFFFF000000000000000000FFFFFF
-      FFFFFFFFFFFFFFFFFF000000000000000000000000000000FFFFFFFFFFFFFFFF
-      FFFFFFFF000000000000000000FFFFFFFFFFFFFFFFFFFFFFFF00000000000000
-      0000000000000000FFFFFFFFFFFFFFFFFFFFFFFF000000000000000000FFFFFF
-      FFFFFFFFFFFFFFFFFF000000000000000000000000000000000000FFFFFFFFFF
-      FF000000000000000000000000000000FFFFFFFFFFFF00000000000000000000
-      0000000000000000000000FFFFFFFFFFFF000000000000000000000000000000
-      FFFFFFFFFFFF000000000000000000000000000000000000000000FFFFFFFFFF
-      FF000000000000000000000000000000FFFFFFFFFFFF00000000000000000000
-      0000000000000000000000FFFFFFFFFFFF000000000000000000000000000000
-      FFFFFFFFFFFF0000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -3706,43 +3789,86 @@ object wndCzat: TwndCzat
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
-      000000000000000000000000000000000000000000000000000000FFFFFFFFFF
-      FF000000000000000000000000000000FFFFFFFFFFFF00000000000000000000
-      0000000000000000000000FFFFFFFFFFFF000000000000000000000000000000
-      FFFFFFFFFFFF000000000000000000000000000000000000000000FFFFFFFFFF
-      FF000000000000000000000000000000FFFFFFFFFFFF00000000000000000000
-      0000000000000000000000FFFFFFFFFFFF000000000000000000000000000000
-      FFFFFFFFFFFF000000000000000000000000000000000000FFFFFF0000000000
-      00FFFFFF000000000000000000FFFFFF000000000000FFFFFF00000000000000
-      0000000000000000FFFFFF000000000000FFFFFF000000000000000000FFFFFF
-      000000000000FFFFFF000000000000000000000000000000FFFFFF0000000000
-      00FFFFFF000000000000000000FFFFFF000000000000FFFFFF00000000000000
-      0000000000000000FFFFFF000000000000FFFFFF000000000000000000FFFFFF
-      000000000000FFFFFF000000000000000000000000000000000000FFFFFFFFFF
-      FF000000000000000000000000000000FFFFFFFFFFFF00000000000000000000
-      0000000000000000000000FFFFFFFFFFFF000000000000000000000000000000
-      FFFFFFFFFFFF000000000000000000000000000000000000000000FFFFFFFFFF
-      FF000000000000000000000000000000FFFFFFFFFFFF00000000000000000000
-      0000000000000000000000FFFFFFFFFFFF000000000000000000000000000000
-      FFFFFFFFFFFF000000000000000000000000000000000000FFFFFFFFFFFFFFFF
-      FFFFFFFF000000000000000000FFFFFFFFFFFFFFFFFFFFFFFF00000000000000
-      0000000000000000FFFFFFFFFFFFFFFFFFFFFFFF000000000000000000FFFFFF
-      FFFFFFFFFFFFFFFFFF000000000000000000000000000000FFFFFFFFFFFFFFFF
-      FFFFFFFF000000000000000000FFFFFFFFFFFFFFFFFFFFFFFF00000000000000
-      0000000000000000FFFFFFFFFFFFFFFFFFFFFFFF000000000000000000FFFFFF
-      FFFFFFFFFFFFFFFFFF000000000000000000000000000000FFFFFFFFFFFFFFFF
-      FFFFFFFF000000000000000000FFFFFFFFFFFFFFFFFFFFFFFF00000000000000
-      0000000000000000FFFFFFFFFFFFFFFFFFFFFFFF000000000000000000FFFFFF
-      FFFFFFFFFFFFFFFFFF000000000000000000000000000000FFFFFFFFFFFFFFFF
-      FFFFFFFF000000000000000000FFFFFFFFFFFFFFFFFFFFFFFF00000000000000
-      0000000000000000FFFFFFFFFFFFFFFFFFFFFFFF000000000000000000FFFFFF
-      FFFFFFFFFFFFFFFFFF000000000000000000000000000000000000FFFFFFFFFF
-      FF000000000000000000000000000000FFFFFFFFFFFF00000000000000000000
-      0000000000000000000000FFFFFFFFFFFF000000000000000000000000000000
-      FFFFFFFFFFFF000000000000000000000000000000000000000000FFFFFFFFFF
-      FF000000000000000000000000000000FFFFFFFFFFFF00000000000000000000
-      0000000000000000000000FFFFFFFFFFFF000000000000000000000000000000
-      FFFFFFFFFFFF0000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000000000000000000000000000FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF0000000000000000000000000000000000000000000000000000000000FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF0000000000000000000000000000000000000000000000000000000000FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF0000000000000000000000000000000000000000000000000000000000FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF00000000000000000000000000000000000000000000000000FFFFFF000000
+      000000000000FFFFFF00000000000000000000000000FFFFFF00000000000000
+      0000FFFFFF000000000000000000000000000000000000000000FFFFFF000000
+      000000000000FFFFFF00000000000000000000000000FFFFFF00000000000000
+      0000FFFFFF000000000000000000000000000000000000000000FFFFFF000000
+      000000000000FFFFFF00000000000000000000000000FFFFFF00000000000000
+      0000FFFFFF000000000000000000000000000000000000000000FFFFFF000000
+      000000000000FFFFFF00000000000000000000000000FFFFFF00000000000000
+      0000FFFFFF00000000000000000000000000000000000000000000000000FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF0000000000000000000000000000000000000000000000000000000000FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF0000000000000000000000000000000000000000000000000000000000FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF0000000000000000000000000000000000000000000000000000000000FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF00000000000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00000000000000000000000000FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00000000000000000000000000FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00000000000000000000000000FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00000000000000000000000000FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00000000000000000000000000FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00000000000000000000000000FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00000000000000000000000000FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00000000000000000000000000FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00000000000000000000000000000000000000000000000000FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF0000000000000000000000000000000000000000000000000000000000FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF0000000000000000000000000000000000000000000000000000000000FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF0000000000000000000000000000000000000000000000000000000000FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF00000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -3824,7 +3950,7 @@ object wndCzat: TwndCzat
       OnClick = Doschowka1Click
     end
     object Czybufor1: TMenuItem
-      Caption = 'Czyœæ bufor'
+      Caption = 'Czy'#347#263' bufor'
       ShortCut = 16430
       OnClick = Czybufor1Click
     end
@@ -3839,12 +3965,13 @@ object wndCzat: TwndCzat
     end
   end
   object NaGorze: TTopMost
-    TopMost = False
+    OnTop = False
     Left = 476
     Top = 65530
   end
   object revDNS: TWSocket
     LineMode = False
+    LineLimit = 65536
     LineEnd = #13#10
     LineEcho = False
     LineEdit = False
@@ -3852,6 +3979,9 @@ object wndCzat: TwndCzat
     LocalAddr = '0.0.0.0'
     LocalPort = '0'
     MultiThreaded = False
+    MultiCast = False
+    MultiCastIpTTL = 1
+    ReuseAddr = False
     ComponentOptions = []
     OnDnsLookupDone = revDNSDnsLookupDone
     FlushTimeout = 60
@@ -3872,6 +4002,7 @@ object wndCzat: TwndCzat
     Timeout = 15
     MultiThreaded = False
     Port = 'ftp'
+    LocalAddr = '0.0.0.0'
     DisplayFileFlag = False
     Binary = True
     ShareMode = ftpShareExclusive
@@ -3890,21 +4021,12 @@ object wndCzat: TwndCzat
     Top = 48
     Bitmap = {
       494C010108000A00040010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
-      0000000000003600000028000000400000003000000001001800000000000024
-      0000000000000000000000000000000000000F00000000001000001000000000
-      00FF0000FFFFFFFFFFFF3F0000000000C01F003F1F00B01F00B01F00FFFFFFFF
-      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-      FFFFFFFFFFFFFFFFFF0000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
-      000000000000000000FF0000704050AFF0500000000000000000000000000000
-      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000003600000028000000400000003000000001002000000000000030
+      0000000000000000000000000000000000000F00000000000000100000001000
+      000000000000FF000000FFFFFF00FFFFFF003F00000000000000C01F00003F1F
+      0000B01F0000B01F0000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -3916,79 +4038,119 @@ object wndCzat: TwndCzat
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
+      000000000000FF00000070405000AFF050000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
-      00000000000000000000000000000000000000000000000000000080FFFF0000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000000000000000006F6F6FFF8F6FFF8F6F3F3F
-      3F000000001F50007FBF006090505050FF704F3F3F3F00000000000000000000
-      00000000006F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F
-      6F6F6F6F6F6F0000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
-      0000000000000000000000000000505020200080002040104080000000FF1F40
-      0000100000003000FF0000000000000000006F6FFF808080FF8F6FFF8F6FFF8F
-      6F6F6F6F3F3F3F6F6FFF0020705050508080805050500000000000000000003F
-      00BF000000909090FF8F6FFF8F6FFF8F6F200070200070004F706F6F6FFF8F6F
-      FF8F6F5050500000000000000000003000903F00BF3000902000703000902000
-      703000903F3F3F6FC0FF909090FF8F6FFF8F6F50505000000000000000000000
-      00009090905050503F3F3F2000708080806060606060606FC0FF808080FF8F6F
-      FF8F6F5050500000000000000000000000000000006F6F6FFF8F6FFF8F6FFF8F
-      6F6F6F6F3F3F3F8FAFFF808080FF8F6FFF8F6F5050508F8FFF3F00BF9F9F9F00
-      00000000006F6F6FFF8F6FFF8F6FFF8F6F6F6F6F3F3F3F8FAFFF808080FF8F6F
-      FF8F6F606060300090808080000000000000000000808080FF8F6FFF8F6FFF8F
-      6F6F6F6F3F3F3F8FAFFF808080FF8F6F80808020007080808000000000000000
-      00006F6FFF3F3F3FFF8F6FFF8F6FFF8F6F6F6F6F3F3F3F8FD0FF9090906F6F6F
-      3F3F3F3F3F3F0000000000000000006F6FFF0000006F6F6F6F6F6F6F6F6F6F6F
-      6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F00000000000000000000
-      00000000006F6F6FFF8F6FFF8F6FFF8F6FFF8F6F9060006F6F6F808080FF8F6F
-      FF8F6F3F3F3F0000008F8FFF0000000000000000006F6F6FFF8F6FFF8F6F6060
-      603F3F3F3F3F3F007FBF6060606F6F6FFF8F6F5050503F00BF3F00BF3F00BF00
-      00000000006F6F6FFF8F6FFF8F6F3F3F3F3F3F3F6060606FC0FF6F6F6F6F6F6F
-      FF8F6F5050500000008F8FFF3000900000000000000000000000000000000000
-      000000000000000000000000000000000000008000000000101000000000202F
-      4020000000FF1F00008000000000FFFFC0C000C0C000C0C000C0800000400000
-      8000C0C000FF00000000000000000000000000000000000000000080FFFF0F00
-      0F100010000000FFFFC0C000C0C000C0C000C08000004000008000C0C000FF00
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000000000000000000000000000000000000000000080FF
+      FF00000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000000000006F6F6F00FF8F6F00FF8F
+      6F003F3F3F0000000000001F5000007FBF000060900050505000FF704F003F3F
+      3F0000000000000000000000000000000000000000006F6F6F006F6F6F006F6F
+      6F006F6F6F006F6F6F006F6F6F006F6F6F006F6F6F006F6F6F006F6F6F006F6F
+      6F00000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00005050200020008000002040001040800000000000FF1F4000000010000000
+      00003000FF000000000000000000000000006F6FFF0080808000FF8F6F00FF8F
+      6F00FF8F6F006F6F6F003F3F3F006F6FFF000020700050505000808080005050
+      50000000000000000000000000003F00BF000000000090909000FF8F6F00FF8F
+      6F00FF8F6F002000700020007000004F70006F6F6F00FF8F6F00FF8F6F005050
+      5000000000000000000000000000300090003F00BF0030009000200070003000
+      900020007000300090003F3F3F006FC0FF0090909000FF8F6F00FF8F6F005050
+      50000000000000000000000000000000000090909000505050003F3F3F002000
+      70008080800060606000606060006FC0FF0080808000FF8F6F00FF8F6F005050
+      500000000000000000000000000000000000000000006F6F6F00FF8F6F00FF8F
+      6F00FF8F6F006F6F6F003F3F3F008FAFFF0080808000FF8F6F00FF8F6F005050
+      50008F8FFF003F00BF009F9F9F0000000000000000006F6F6F00FF8F6F00FF8F
+      6F00FF8F6F006F6F6F003F3F3F008FAFFF0080808000FF8F6F00FF8F6F006060
+      6000300090008080800000000000000000000000000080808000FF8F6F00FF8F
+      6F00FF8F6F006F6F6F003F3F3F008FAFFF0080808000FF8F6F00808080002000
+      7000808080000000000000000000000000006F6FFF003F3F3F00FF8F6F00FF8F
+      6F00FF8F6F006F6F6F003F3F3F008FD0FF00909090006F6F6F003F3F3F003F3F
+      3F000000000000000000000000006F6FFF00000000006F6F6F006F6F6F006F6F
+      6F006F6F6F006F6F6F006F6F6F006F6F6F006F6F6F006F6F6F006F6F6F006F6F
+      6F0000000000000000000000000000000000000000006F6F6F00FF8F6F00FF8F
+      6F00FF8F6F00FF8F6F00906000006F6F6F0080808000FF8F6F00FF8F6F003F3F
+      3F00000000008F8FFF000000000000000000000000006F6F6F00FF8F6F00FF8F
+      6F00606060003F3F3F003F3F3F00007FBF00606060006F6F6F00FF8F6F005050
+      50003F00BF003F00BF003F00BF0000000000000000006F6F6F00FF8F6F00FF8F
+      6F003F3F3F003F3F3F00606060006FC0FF006F6F6F006F6F6F00FF8F6F005050
+      5000000000008F8FFF0030009000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000008000
+      00000000100010000000000020002F40200000000000FF1F0000008000000000
+      0000FFFFC000C000C000C000C000C000C00080000000400000008000C000C000
+      FF000000000000000000000000000000000000000000000000000000000080FF
+      FF000F000F001000100000000000FFFFC000C000C000C000C000C000C0008000
+      0000400000008000C000C000FF00000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000005050500000000000000000000000
-      009090905050503F3F3F2000708080806060606060606FC0FF808080FF8F6FFF
-      8F6F5050500000000000000000000000000000006F6F6FFF8F6FFF8F6F3F3F3F
-      000000001F50007FBF006090505050FF704F3F3F3F0000000000000000000000
-      000000006F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F6F
-      6F6F6F6F6F000000000000000000000000000000000000000000000000000000
-      000000000000000000000000000000000000703F300F0F0F0F0F000000000000
-      006F6FFF3F3F3FFF8F6FFF8F6FFF8F6F6F6F6F3F3F3F8FD0FF9090906F6F6F3F
-      3F3F3F3F3F0000000000000000006F6FFF6F6FFF808080FF8F6FFF8F6FFF8F6F
-      6F6F6F3F3F3F6F6FFF0020705050508080805050500000000000000000003F00
-      BF000000909090FF8F6FFF8F6FFF8F6F200070200070004F706F6F6FFF8F6FFF
-      8F6F5050500000000000000000003000903F00BF300090200070300090200070
-      3000903F3F3F6FC0FF909090FF8F6FFF8F6F706F506060703F403F50504F5040
-      4F404F4F505F4F40404020504F505050404F5F605070607060607F600F40706F
-      50707060603F403F50504F50404F404F4F505F4F40404020504F505050404F5F
-      605070607060607F600F707F50403FEFFFFFE0FFEF0F506F6F60603F300F506F
-      706060603F300F507060707060703F300F506F704F606F3F300F60406F40606F
-      70606F6060300F0F606070706F5070603F0F0F0F5F6F706F5F300F0F70706070
-      703F300F0F0F5F6F706F5F300F0F7070607050505040404F706F707070302F60
-      7F0F0F50606F4060407F3F403F50504F50404F404F4F505F4F40404020504F50
-      5050404F5F606F60603030607F600F50706F606F404040403F5F504F40404F20
-      4F4F405F4F40404040504F505050404F5F706F606030302F7F600F5060606F60
-      707F603F3F5F504F40504F20404F40504F40404040204F50505040405F70606F
-      3030607F600F404F404F40303F405F505040504020404F40505F404040402050
-      50505040404F606F6F6F60302F607F0F0F406F703F0F0F70706F4060606F6040
-      6F60703F0F0F70706F4060606F60406F703F300F704F6F4060607060406F6F70
-      3F300F704F6F4F6F6060406F6070300F0F506F6F506060507060706060303F3F
-      2F302F3F2F302F303030300F70506F6050606F406F60603F3F3F3F302F302F3F
-      2F3F2F3F0F704F6F50606F6F603F30303F0F0F4F706F6F6F604F6F70603F300F
-      0F0F4F60406060206F707050606020406F706F6F5F0F0F6F706F707040603F40
-      5F505040504020404F40505F4040404020500000000000000000000000000000
+      00000000000090909000505050003F3F3F002000700080808000606060006060
+      60006FC0FF0080808000FF8F6F00FF8F6F005050500000000000000000000000
+      000000000000000000006F6F6F00FF8F6F00FF8F6F003F3F3F0000000000001F
+      5000007FBF000060900050505000FF704F003F3F3F0000000000000000000000
+      000000000000000000006F6F6F006F6F6F006F6F6F006F6F6F006F6F6F006F6F
+      6F006F6F6F006F6F6F006F6F6F006F6F6F006F6F6F0000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000703F30000F0F0F000F0F00000000
+      0000000000006F6FFF003F3F3F00FF8F6F00FF8F6F00FF8F6F006F6F6F003F3F
+      3F008FD0FF00909090006F6F6F003F3F3F003F3F3F0000000000000000000000
+      00006F6FFF006F6FFF0080808000FF8F6F00FF8F6F00FF8F6F006F6F6F003F3F
+      3F006F6FFF000020700050505000808080005050500000000000000000000000
+      00003F00BF000000000090909000FF8F6F00FF8F6F00FF8F6F00200070002000
+      7000004F70006F6F6F00FF8F6F00FF8F6F005050500000000000000000000000
+      0000300090003F00BF0030009000200070003000900020007000300090003F3F
+      3F006FC0FF0090909000FF8F6F00FF8F6F00706F5000606070003F403F005050
+      4F0050404F00404F4F00505F4F004040400020504F0050505000404F5F006050
+      700060706000607F60000F4070006F507000706060003F403F0050504F005040
+      4F00404F4F00505F4F004040400020504F0050505000404F5F00605070006070
+      6000607F60000F707F0050403F00EFFFFF00E0FFEF000F506F006F6060003F30
+      0F00506F7000606060003F300F005070600070706000703F30000F506F00704F
+      60006F3F30000F6040006F4060006F7060006F606000300F0F0060607000706F
+      500070603F000F0F0F005F6F70006F5F30000F0F700070607000703F30000F0F
+      0F005F6F70006F5F30000F0F7000706070005050500040404F00706F70007070
+      30002F607F000F0F5000606F400060407F003F403F0050504F0050404F00404F
+      4F00505F4F004040400020504F0050505000404F5F00606F600060303000607F
+      60000F5070006F606F0040404000403F5F00504F4000404F20004F4F40005F4F
+      400040404000504F5000505040004F5F70006F60600030302F007F600F005060
+      60006F6070007F603F003F5F50004F4050004F2040004F4050004F4040004040
+      20004F505000504040005F7060006F303000607F60000F404F00404F4000303F
+      40005F5050004050400020404F0040505F004040400040205000505050004040
+      4F00606F6F006F6030002F607F000F0F40006F703F000F0F7000706F40006060
+      6F0060406F0060703F000F0F7000706F400060606F0060406F00703F30000F70
+      4F006F40600060706000406F6F00703F30000F704F006F4F6F00606040006F60
+      7000300F0F00506F6F00506060005070600070606000303F3F002F302F003F2F
+      30002F30300030300F0070506F00605060006F406F0060603F003F3F3F00302F
+      30002F3F2F003F2F3F000F704F006F5060006F6F60003F3030003F0F0F004F70
+      6F006F6F60004F6F7000603F30000F0F0F004F604000606020006F7070005060
+      600020406F00706F6F005F0F0F006F706F0070704000603F40005F5050004050
+      400020404F0040505F0040404000402050000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -4011,43 +4173,6 @@ object wndCzat: TwndCzat
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
-      000000000000000000000000000000000000000000000000000000FFFFFFFFFF
-      FF000000000000000000000000000000FFFFFFFFFFFF00000000000000000000
-      0000000000000000000000FFFFFFFFFFFF000000000000000000000000000000
-      FFFFFFFFFFFF000000000000000000000000000000000000000000FFFFFFFFFF
-      FF000000000000000000000000000000FFFFFFFFFFFF00000000000000000000
-      0000000000000000000000FFFFFFFFFFFF000000000000000000000000000000
-      FFFFFFFFFFFF000000000000000000000000000000000000FFFFFF0000000000
-      00FFFFFF000000000000000000FFFFFF000000000000FFFFFF00000000000000
-      0000000000000000000000000000FFFFFFFFFFFF000000000000000000000000
-      000000FFFFFFFFFFFF000000000000000000000000000000FFFFFF0000000000
-      00FFFFFF000000000000000000FFFFFF000000000000FFFFFF00000000000000
-      0000000000000000FFFFFFFFFFFF000000000000000000000000000000FFFFFF
-      FFFFFF000000000000000000000000000000000000000000FFFFFF0000000000
-      00FFFFFF000000000000000000FFFFFF000000000000FFFFFF00000000000000
-      0000000000000000000000000000FFFFFFFFFFFF000000000000000000000000
-      000000FFFFFFFFFFFF000000000000000000000000000000FFFFFF0000000000
-      00FFFFFF000000000000000000FFFFFF000000000000FFFFFF00000000000000
-      0000000000000000FFFFFFFFFFFF000000000000000000000000000000FFFFFF
-      FFFFFF000000000000000000000000000000000000000000FFFFFF0000000000
-      00FFFFFF000000000000000000FFFFFF000000000000FFFFFF00000000000000
-      0000000000000000000000000000FFFFFFFFFFFF000000000000000000000000
-      000000FFFFFFFFFFFF000000000000000000000000000000FFFFFF0000000000
-      00FFFFFF000000000000000000FFFFFF000000000000FFFFFF00000000000000
-      0000000000000000FFFFFFFFFFFF000000000000000000000000000000FFFFFF
-      FFFFFF000000000000000000000000000000000000000000FFFFFFFFFFFFFFFF
-      FFFFFFFF000000000000000000FFFFFFFFFFFFFFFFFFFFFFFF00000000000000
-      0000000000000000FFFFFFFFFFFFFFFFFFFFFFFF000000000000000000FFFFFF
-      FFFFFFFFFFFFFFFFFF000000000000000000000000000000FFFFFFFFFFFFFFFF
-      FFFFFFFF000000000000000000FFFFFFFFFFFFFFFFFFFFFFFF00000000000000
-      0000000000000000FFFFFFFFFFFFFFFFFFFFFFFF000000000000000000FFFFFF
-      FFFFFFFFFFFFFFFFFF000000000000000000000000000000000000FFFFFFFFFF
-      FF000000000000000000000000000000FFFFFFFFFFFF00000000000000000000
-      0000000000000000000000FFFFFFFFFFFF000000000000000000000000000000
-      FFFFFFFFFFFF000000000000000000000000000000000000000000FFFFFFFFFF
-      FF000000000000000000000000000000FFFFFFFFFFFF00000000000000000000
-      0000000000000000000000FFFFFFFFFFFF000000000000000000000000000000
-      FFFFFFFFFFFF0000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -4057,6 +4182,55 @@ object wndCzat: TwndCzat
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000000000000000000000000000FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF0000000000000000000000000000000000000000000000000000000000FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF0000000000000000000000000000000000000000000000000000000000FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF0000000000000000000000000000000000000000000000000000000000FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF00000000000000000000000000000000000000000000000000FFFFFF000000
+      000000000000FFFFFF00000000000000000000000000FFFFFF00000000000000
+      0000FFFFFF000000000000000000000000000000000000000000000000000000
+      0000FFFFFF00FFFFFF000000000000000000000000000000000000000000FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF000000
+      000000000000FFFFFF00000000000000000000000000FFFFFF00000000000000
+      0000FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF000000000000000000000000000000000000000000FFFFFF00FFFFFF000000
+      0000000000000000000000000000000000000000000000000000FFFFFF000000
+      000000000000FFFFFF00000000000000000000000000FFFFFF00000000000000
+      0000FFFFFF000000000000000000000000000000000000000000000000000000
+      0000FFFFFF00FFFFFF000000000000000000000000000000000000000000FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF000000
+      000000000000FFFFFF00000000000000000000000000FFFFFF00000000000000
+      0000FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF000000000000000000000000000000000000000000FFFFFF00FFFFFF000000
+      0000000000000000000000000000000000000000000000000000FFFFFF000000
+      000000000000FFFFFF00000000000000000000000000FFFFFF00000000000000
+      0000FFFFFF000000000000000000000000000000000000000000000000000000
+      0000FFFFFF00FFFFFF000000000000000000000000000000000000000000FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF000000
+      000000000000FFFFFF00000000000000000000000000FFFFFF00000000000000
+      0000FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF000000000000000000000000000000000000000000FFFFFF00FFFFFF000000
+      0000000000000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00000000000000000000000000FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00000000000000000000000000FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00000000000000000000000000FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00000000000000000000000000FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00000000000000000000000000000000000000000000000000FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF0000000000000000000000000000000000000000000000000000000000FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF0000000000000000000000000000000000000000000000000000000000FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF0000000000000000000000000000000000000000000000000000000000FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF00000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -4107,43 +4281,96 @@ object wndCzat: TwndCzat
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
-      000000000000000000000000000000000000000000000000000000FFFFFFFFFF
-      FF000000000000000000000000000000FFFFFFFFFFFF00000000000000000000
-      0000000000000000000000FFFFFFFFFFFF000000000000000000000000000000
-      FFFFFFFFFFFF000000000000000000000000000000000000000000FFFFFFFFFF
-      FF000000000000000000000000000000FFFFFFFFFFFF00000000000000000000
-      0000000000000000000000FFFFFFFFFFFF000000000000000000000000000000
-      FFFFFFFFFFFF000000000000000000000000000000000000FFFFFFFFFFFF0000
-      00000000000000000000000000FFFFFFFFFFFF00000000000000000000000000
-      0000000000000000FFFFFFFFFFFF000000000000000000000000000000FFFFFF
-      FFFFFF000000000000000000000000000000000000000000FFFFFFFFFFFF0000
-      00000000000000000000000000FFFFFFFFFFFF00000000000000000000000000
-      0000000000000000FFFFFFFFFFFF000000000000000000000000000000FFFFFF
-      FFFFFF000000000000000000000000000000000000000000FFFFFFFFFFFF0000
-      00000000000000000000000000FFFFFFFFFFFF00000000000000000000000000
-      0000000000000000FFFFFFFFFFFF000000000000000000000000000000FFFFFF
-      FFFFFF000000000000000000000000000000000000000000FFFFFFFFFFFF0000
-      00000000000000000000000000FFFFFFFFFFFF00000000000000000000000000
-      0000000000000000FFFFFFFFFFFF000000000000000000000000000000FFFFFF
-      FFFFFF000000000000000000000000000000000000000000FFFFFFFFFFFF0000
-      00000000000000000000000000FFFFFFFFFFFF00000000000000000000000000
-      0000000000000000FFFFFFFFFFFF000000000000000000000000000000FFFFFF
-      FFFFFF000000000000000000000000000000000000000000FFFFFFFFFFFF0000
-      00000000000000000000000000FFFFFFFFFFFF00000000000000000000000000
-      0000000000000000FFFFFFFFFFFF000000000000000000000000000000FFFFFF
-      FFFFFF000000000000000000000000000000000000000000FFFFFFFFFFFFFFFF
-      FFFFFFFF000000000000000000FFFFFFFFFFFFFFFFFFFFFFFF00000000000000
-      0000000000000000FFFFFFFFFFFFFFFFFFFFFFFF000000000000000000FFFFFF
-      FFFFFFFFFFFFFFFFFF000000000000000000000000000000FFFFFFFFFFFFFFFF
-      FFFFFFFF000000000000000000FFFFFFFFFFFFFFFFFFFFFFFF00000000000000
-      0000000000000000FFFFFFFFFFFFFFFFFFFFFFFF000000000000000000FFFFFF
-      FFFFFFFFFFFFFFFFFF000000000000000000000000000000000000FFFFFFFFFF
-      FF000000000000000000000000000000FFFFFFFFFFFF00000000000000000000
-      0000000000000000000000FFFFFFFFFFFF000000000000000000000000000000
-      FFFFFFFFFFFF000000000000000000000000000000000000000000FFFFFFFFFF
-      FF000000000000000000000000000000FFFFFFFFFFFF00000000000000000000
-      0000000000000000000000FFFFFFFFFFFF000000000000000000000000000000
-      FFFFFFFFFFFF0000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000000000000000000000000000FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF0000000000000000000000000000000000000000000000000000000000FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF0000000000000000000000000000000000000000000000000000000000FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF0000000000000000000000000000000000000000000000000000000000FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF00000000000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF000000000000000000000000000000000000000000FFFFFF00FFFFFF000000
+      0000000000000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF000000000000000000000000000000000000000000FFFFFF00FFFFFF000000
+      0000000000000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF000000000000000000000000000000000000000000FFFFFF00FFFFFF000000
+      0000000000000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF000000000000000000000000000000000000000000FFFFFF00FFFFFF000000
+      0000000000000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF000000000000000000000000000000000000000000FFFFFF00FFFFFF000000
+      0000000000000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF000000000000000000000000000000000000000000FFFFFF00FFFFFF000000
+      0000000000000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF000000000000000000000000000000000000000000FFFFFF00FFFFFF000000
+      0000000000000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF000000000000000000000000000000000000000000FFFFFF00FFFFFF000000
+      0000000000000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF000000000000000000000000000000000000000000FFFFFF00FFFFFF000000
+      0000000000000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF000000000000000000000000000000000000000000FFFFFF00FFFFFF000000
+      0000000000000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF000000000000000000000000000000000000000000FFFFFF00FFFFFF000000
+      0000000000000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF000000000000000000000000000000000000000000FFFFFF00FFFFFF000000
+      0000000000000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00000000000000000000000000FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00000000000000000000000000FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00000000000000000000000000FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00000000000000000000000000FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00000000000000000000000000000000000000000000000000FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF0000000000000000000000000000000000000000000000000000000000FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF0000000000000000000000000000000000000000000000000000000000FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF0000000000000000000000000000000000000000000000000000000000FFFF
+      FF00FFFFFF000000000000000000000000000000000000000000FFFFFF00FFFF
+      FF00000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -4218,6 +4445,7 @@ object wndCzat: TwndCzat
   end
   object WhoIsSocket: TWSocket
     LineMode = True
+    LineLimit = 65536
     LineEnd = #13#10
     LineEcho = False
     LineEdit = False
@@ -4227,6 +4455,9 @@ object wndCzat: TwndCzat
     LocalAddr = '0.0.0.0'
     LocalPort = '0'
     MultiThreaded = False
+    MultiCast = False
+    MultiCastIpTTL = 1
+    ReuseAddr = False
     ComponentOptions = []
     OnDataAvailable = WhoIsSocketDataAvailable
     OnSessionClosed = WhoIsSocketSessionClosed

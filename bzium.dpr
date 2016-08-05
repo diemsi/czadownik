@@ -14,8 +14,7 @@ uses
   pokoje in 'pokoje.pas' {wndPokoje},
   nl_elem in 'nl_elem.pas',
   ip_parser in 'ip_parser.pas',
-  mycrc in '..\kci\mycrc.pas';
-
+  mycrc in 'mycrc.pas';
 
 Type TLockData = record
       nick:array[1..255] of Char;
@@ -70,9 +69,9 @@ begin
      Application.Title := 'KCI Czadownik';
      Application.Icon.Handle := LoadIcon(MainInstance, 'Z_IKONKA');
      Application.CreateForm(TwndCzat, wndCzat);
-     Application.CreateForm(TwndPokoje, wndPokoje);
-     Application.CreateForm(TwndObrazki, wndObrazki);
-     wndSplash := TwndSplash.Create(Application);
+  Application.CreateForm(TwndPokoje, wndPokoje);
+  Application.CreateForm(TwndObrazki, wndObrazki);
+  wndSplash := TwndSplash.Create(Application);
      wndSplash.Show;
      wndSplash.Refresh;
      Application.Run;

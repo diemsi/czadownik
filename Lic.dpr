@@ -3,7 +3,7 @@ program Lic;
 uses
   Forms,
   wnd_LIC in 'wnd_LIC.pas' {Form1},
-  mycrc in '..\kci\mycrc.pas';
+  mycrc in 'mycrc.pas';
 
 {$R *.RES}
 

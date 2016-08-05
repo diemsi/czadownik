@@ -4,12 +4,11 @@ interface
 
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  ExtCtrls, CoolForm;
+  ExtCtrls;
 
 type
   TwndSplash = class(TForm)
     Timer1: TTimer;
-    CoolForm1: TCoolForm;
     procedure Timer1Timer(Sender: TObject);
     procedure FormCreate(Sender: TObject);
   private

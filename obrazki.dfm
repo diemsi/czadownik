@@ -1,7 +1,7 @@
 object wndObrazki: TwndObrazki
   Left = 367
   Top = 303
-  Width = 395
+  Width = 408
   Height = 389
   ActiveControl = btnZamknij
   Caption = 'Obrazki'
@@ -91,11 +91,14 @@ object wndObrazki: TwndObrazki
   TextHeight = 13
   object Panel1: TPanel
     Left = 0
-    Top = 325
-    Width = 387
+    Top = 313
+    Width = 392
     Height = 37
     Align = alBottom
     TabOrder = 0
+    DesignSize = (
+      392
+      37)
     object lblIloscObrazkow: TLabel
       Left = 80
       Top = 6
@@ -114,7 +117,7 @@ object wndObrazki: TwndObrazki
       Top = 6
       Width = 75
       Height = 13
-      Caption = 'Iloœæ obrazków:'
+      Caption = 'Ilo'#347#263' obrazk'#243'w:'
     end
     object NazwaObrazka: TLabel
       Left = 4
@@ -131,7 +134,7 @@ object wndObrazki: TwndObrazki
       ParentFont = False
     end
     object btnZamknij: TButton
-      Left = 340
+      Left = 345
       Top = 6
       Width = 43
       Height = 25
@@ -151,8 +154,8 @@ object wndObrazki: TwndObrazki
   object Obrazki: TStringGrid
     Left = 0
     Top = 0
-    Width = 387
-    Height = 325
+    Width = 392
+    Height = 313
     Align = alClient
     Color = clWhite
     FixedCols = 0

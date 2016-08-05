@@ -1,6 +1,6 @@
 object wndSplash: TwndSplash
-  Left = 169
-  Top = 169
+  Left = 623
+  Top = 298
   BorderStyle = bsNone
   ClientHeight = 256
   ClientWidth = 333
@@ -16,13 +16,6 @@ object wndSplash: TwndSplash
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
-  object CoolForm1: TCoolForm
-    left = 0
-    top = 0
-    width = 333
-    height = 256
-    Align = alClient
-  end
   object Timer1: TTimer
     Enabled = False
     Interval = 2000
